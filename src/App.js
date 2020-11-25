@@ -1,10 +1,9 @@
 import React from 'react'
+import Page from './components/Page/Page'
 
 function App() {
   return (
-    <main className='App'>
-      Hello 24/7 REcruit!
-    </main>
+    <Page />
   );
 }
 
