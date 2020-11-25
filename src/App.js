@@ -1,9 +1,11 @@
 import React from 'react'
-import Page from './components/Page/Page'
+import FollowedAgents from './components/FollowedAgents/FollowedAgents'
 
 function App() {
   return (
-    <Page />
+    <main>
+      <FollowedAgents />
+    </main>
   );
 }
 
