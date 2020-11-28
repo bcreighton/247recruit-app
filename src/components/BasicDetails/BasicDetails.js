@@ -10,7 +10,7 @@ class BasicDetails extends Component {
           </li>
           <li className="detailItem">
             <span className='detailTitle'>Office: </span>
-            {this.props.agent.office}
+            {this.props.agent.office_name}
           </li>
           <li className="detailItem">
             <span className='detailTitle'>Volume: </span>

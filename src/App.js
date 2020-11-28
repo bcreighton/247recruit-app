@@ -4,6 +4,7 @@ import FollowedAgents from './components/Pages/FollowedAgents/FollowedAgents'
 import Footer from './components/Footer/Footer';
 import Nav from './components/Nav/Nav';
 import AgentProfile from './components/Pages/AgentProfile/AgentProfile';
+import SearchResults from './components/SearchResults/SearchResults';
 
 function App() {
   return (
@@ -11,24 +12,7 @@ function App() {
       <Nav />
       <Brand />
       <main>
-        <AgentProfile
-          agent={
-            {
-              name: 'Susie Q',
-              contact: {
-                phone: '713-123-1234',
-                email: 'susie@kw.com',
-              },
-              office: {
-                name: 'Keller Williams',
-                address: '123 Main St. Houston, TX'
-              },
-              vol: '10,000,000',
-              trans: '31',
-              exp: '22',
-            }
-          }
-        />
+        <SearchResults />
       </main>
       <Footer />
     </>

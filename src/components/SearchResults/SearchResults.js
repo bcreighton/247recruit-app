@@ -1,58 +1,27 @@
 import React, { Component } from 'react'
 import AgentCard from '../AgentCard/AgentCard'
+import Agents from '../../mockData/agentsData'
 
 class SearchResults extends Component {
+    debugger
+    generateSearchResults(agents) {
+        debugger
+        return agents.map(agent => (
+            <AgentCard
+                key={agent.id}
+                id={agent.id}
+                name={`${agent.first_name} ${agent.last_name}`}
+                office_name={agent.office_name}
+                vol={agent.vol}
+                trans={agent.trans}
+                exp={agent.exp}
+            />
+        ))
+    }
     render() {
         return (
             <>
-                <AgentCard
-                    agent={
-                        {
-                            name: 'Susie Q',
-                            office: 'Keller Williams',
-                            vol: '10,000,000',
-                            trans: '31',
-                            exp: '22',
-                        }
-                    }
-
-                />
-                <AgentCard
-                    agent={
-                        {
-                            name: 'John Miller',
-                            office: 'Compass',
-                            vol: '2,500,000',
-                            trans: '4',
-                            exp: '2',
-                        }
-                    }
-
-                />
-                <AgentCard
-                    agent={
-                        {
-                            name: 'Jane Ore',
-                            office: 'JLA Realty',
-                            vol: '375,000',
-                            trans: '1',
-                            exp: '6',
-                        }
-                    }
-
-                />
-                <AgentCard
-                    agent={
-                        {
-                            name: 'Mike Smith',
-                            office: 'eXp',
-                            vol: '0',
-                            trans: '0',
-                            exp: '1',
-                        }
-                    }
-
-                />
+                {this.generateSearchResults(Agents)}
             </>
         )
     }

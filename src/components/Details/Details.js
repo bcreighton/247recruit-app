@@ -12,10 +12,10 @@ class Details extends Component {
         <div className="details">
           <ul>
             <li className="detailItem">
-              {this.props.agent.contact.phone}
+              {this.props.agent.phone}
             </li>
             <li className="detailItem">
-              {this.props.agent.contact.email}
+              {this.props.agent.email}
             </li>
             <li className="detailItem">
               <span className='detailTitle'>Volume: </span>
@@ -30,10 +30,10 @@ class Details extends Component {
               {this.props.agent.exp} years
             </li>
             <li className="detailItem">
-              {this.props.agent.office.name}
+              {this.props.agent.office_name}
             </li>
             <li className="detailItem">
-              {this.props.agent.office.address}
+              {`${this.props.agent.office_steet}, ${this.props.agent.office_city}, ${this.props.agent.office_state} ${this.props.agent.office_zip}`}
             </li>
           </ul>
         </div>
