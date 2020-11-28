@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import AgentCard from '../AgentCard/AgentCard'
-import FollowBTN from '../FollowBTN/FollowBTN'
-import Footer from '../Footer/Footer'
+import AgentCard from '../../AgentCard/AgentCard'
 
 class FollowedAgents extends Component {
-    redner() {
+    render() {
         return (
             <>
                 <section className="container">
@@ -15,7 +13,7 @@ class FollowedAgents extends Component {
                         trans='10'
                         exp='3'
                     />
-                    <FollowBTN />
+
                     <AgentCard
                         name='Jon Johnson'
                         office='JJ Realty'
@@ -23,7 +21,7 @@ class FollowedAgents extends Component {
                         trans='6'
                         exp='3'
                     />
-                    <FollowBTN />
+
                     <AgentCard
                         name='Jessica Wills'
                         office='JLA Realty'
@@ -31,7 +29,7 @@ class FollowedAgents extends Component {
                         trans='12'
                         exp='6'
                     />
-                    <FollowBTN />
+
                     <AgentCard
                         name='Mike Smith'
                         office='eXp'
@@ -39,7 +37,7 @@ class FollowedAgents extends Component {
                         trans='0'
                         exp='1'
                     />
-                    <FollowBTN />
+
                     <AgentCard
                         name='Sam Haram'
                         office='Coldwell Banker'
@@ -47,7 +45,7 @@ class FollowedAgents extends Component {
                         trans='5'
                         exp='7'
                     />
-                    <FollowBTN />
+
                     <AgentCard
                         name='Ige Willson'
                         office='Sothebys'
@@ -55,7 +53,7 @@ class FollowedAgents extends Component {
                         trans='50'
                         exp='16'
                     />
-                    <FollowBTN />
+
                     <AgentCard
                         name='Bob Alam'
                         office='John Greene Real Estate'
@@ -63,7 +61,7 @@ class FollowedAgents extends Component {
                         trans='5'
                         exp='8'
                     />
-                    <FollowBTN />
+
                     <AgentCard
                         name='Robbie Kelly'
                         office='eXp'
@@ -72,7 +70,6 @@ class FollowedAgents extends Component {
                         exp='9'
                     />
                 </section>
-                <Footer />
             </>
         )
     }

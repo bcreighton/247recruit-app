@@ -6,23 +6,23 @@ class BasicDetails extends Component {
       <div className="basicDetails">
         <ul>
           <li className="detailItem agentCardName">
-            {this.props.name}
+            {this.props.agent.name}
           </li>
           <li className="detailItem">
             <span className='detailTitle'>Office: </span>
-            {this.props.office}
+            {this.props.agent.office}
           </li>
           <li className="detailItem">
             <span className='detailTitle'>Volume: </span>
-            ${this.props.vol}
+            ${this.props.agent.vol}
           </li>
           <li className="detailItem">
             <span className='detailTitle'>Transactions: </span>
-            {this.props.trans}
+            {this.props.agent.trans}
           </li>
           <li className="detailItem">
             <span className='detailTitle'>Experience: </span>
-            {this.props.exp} years
+            {this.props.agent.exp} years
           </li>
         </ul>
       </div>

@@ -7,11 +7,7 @@ class AgentCard extends Component {
     return (
       <div className="agentCard">
         <BasicDetails
-          name={this.props.name}
-          office={this.props.office}
-          vol={this.props.vol}
-          trans={this.props.trans}
-          exp={this.props.exp}
+          agent={this.props}
         />
         <FollowBTN />
       </div>
