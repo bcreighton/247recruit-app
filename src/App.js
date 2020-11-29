@@ -5,6 +5,8 @@ import Footer from './components/Footer/Footer';
 import Nav from './components/Nav/Nav';
 import AgentProfile from './components/Pages/AgentProfile/AgentProfile';
 import SearchResults from './components/SearchResults/SearchResults';
+import AgentSearch from './components/Pages/AgentSearch/AgentSearch';
+import Landing from './components/Pages/Landing/Landing'
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
       <Nav />
       <Brand />
       <main>
-        <SearchResults />
+        <FollowedAgents />
       </main>
       <Footer />
     </>

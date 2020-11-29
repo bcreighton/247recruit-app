@@ -14,7 +14,7 @@ class BasicDetails extends Component {
           </li>
           <li className="detailItem">
             <span className='detailTitle'>Volume: </span>
-            ${this.props.agent.vol}
+            {this.props.agent.vol}
           </li>
           <li className="detailItem">
             <span className='detailTitle'>Transactions: </span>

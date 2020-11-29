@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import SearchForm from '../SearchForm/SearchForm'
-import SearchResults from '../SearchResults/SearchResults'
+import SearchForm from '../../SearchForm/SearchForm'
+import SearchResults from '../../SearchResults/SearchResults'
 
 class AgentSearch extends Component {
     render() {

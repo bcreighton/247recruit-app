@@ -5,6 +5,7 @@ class NoteForm extends Component {
     return (
       <section className='container'>
         <form action="" id="note">
+          <h4 className="formTitle">Enter A New Note</h4>
           <label htmlFor="title">Title:</label>
           <input type="text" id='title' name='note_title' />
 

@@ -2,16 +2,27 @@ import React, { Component } from 'react'
 import Details from '../../Details/Details'
 import FollowUp from '../../FollowUp/FollowUp'
 import Notes from '../../Notes/Notes'
+import agents from '../../../mockData/agentsData'
 
 class AgentProfile extends Component {
+
+  getAgent(agents) {
+    return agents.find(agent => {
+      return agent.id === 374
+    })
+  }
+
   render() {
+    const selectedAgent = this.getAgent(agents)
+    debugger
+
     return (
       <>
         <Details
-          agent={this.props.agent}
+          agent={selectedAgent}
         />
         <FollowUp />
-        <Notes />
+        <Notes agent_id={selectedAgent.id} />
       </>
     )
   }

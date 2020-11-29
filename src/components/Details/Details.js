@@ -3,23 +3,23 @@ import FollowBTN from '../FollowBTN/FollowBTN'
 
 class Details extends Component {
   render() {
-
+    debugger
     return (
       <section className="content">
-        <h1 className="agentName">{this.props.agent.name}</h1>
+        <h1 className="agentName">{`${this.props.agent.first_name} ${this.props.agent.last_name}`}</h1>
         <FollowBTN />
         <hr />
         <div className="details">
           <ul>
             <li className="detailItem">
-              {this.props.agent.phone}
+              {this.props.agent.contact.phone}
             </li>
             <li className="detailItem">
-              {this.props.agent.email}
+              {this.props.agent.contact.email}
             </li>
             <li className="detailItem">
               <span className='detailTitle'>Volume: </span>
-              ${this.props.agent.vol}
+              {this.props.agent.vol}
             </li>
             <li className="detailItem">
               <span className='detailTitle'>Transactions: </span>
@@ -30,10 +30,10 @@ class Details extends Component {
               {this.props.agent.exp} years
             </li>
             <li className="detailItem">
-              {this.props.agent.office_name}
+              {this.props.agent.office.name}
             </li>
             <li className="detailItem">
-              {`${this.props.agent.office_steet}, ${this.props.agent.office_city}, ${this.props.agent.office_state} ${this.props.agent.office_zip}`}
+              {`${this.props.agent.office.street}, ${this.props.agent.office.city}, ${this.props.agent.office.state} ${this.props.agent.office.zip}`}
             </li>
           </ul>
         </div>

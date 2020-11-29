@@ -7,6 +7,7 @@ class NoteCard extends Component {
     return (
       <div className="noteCard">
         <h3 className="noteTitle">{this.props.title}</h3>
+        <h4 className="noteDate">{this.props.date}</h4>
         <div className="noteContent">
           {this.props.content}
         </div>
