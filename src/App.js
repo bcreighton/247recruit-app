@@ -14,7 +14,7 @@ function App() {
       <Nav />
       <Brand />
       <main>
-        <FollowedAgents />
+        <AgentSearch />
       </main>
       <Footer />
     </>

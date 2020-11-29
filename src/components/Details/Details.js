@@ -3,7 +3,7 @@ import FollowBTN from '../FollowBTN/FollowBTN'
 
 class Details extends Component {
   render() {
-    debugger
+    
     return (
       <section className="content">
         <h1 className="agentName">{`${this.props.agent.first_name} ${this.props.agent.last_name}`}</h1>

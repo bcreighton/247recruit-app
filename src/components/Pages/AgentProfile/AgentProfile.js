@@ -14,7 +14,7 @@ class AgentProfile extends Component {
 
   render() {
     const selectedAgent = this.getAgent(agents)
-    debugger
+    
 
     return (
       <>
