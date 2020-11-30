@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import agents from '../../../mockData/agentsData'
 import users from '../../../mockData/userData'
 import AgentCard from '../../AgentCard/AgentCard'
@@ -34,8 +35,8 @@ class FollowedAgents extends Component {
         
 
         return matchedAgents.map(agent => (
-            <AgentCard
-                key={agent.id}
+            <Link to={`/agent/${agent.id}`} key={agent.id} >
+                <AgentCard
                 id={agent.id}
                 name={`${agent.first_name} ${agent.last_name}`}
                 office_name={agent.office.name}
@@ -43,6 +44,7 @@ class FollowedAgents extends Component {
                 trans={agent.trans}
                 exp={agent.exp}
             />
+            </Link>
         ))
     }
 
@@ -53,7 +55,7 @@ class FollowedAgents extends Component {
 
         return (
             <section className="container">
-                <h1 className="sectionTitle">Followed Agents</h1>
+                <h1 className="sectionTitle">Agents You're Following</h1>
                 {this.generateFollowedAgentsList(followedAgentIds)}
             </section>
         )
