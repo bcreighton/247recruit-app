@@ -1,0 +1,79 @@
+.container.agentDetail {
+    display: grid;
+    padding: 10px 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 3fr;
+    border-bottom: 2px solid lightgray;
+}
+
+.container.followUp {
+    padding: 10px 30px;
+}
+
+.agentName {
+    grid-row: 1/2;
+    align-self: end;
+}
+
+.follow {
+    grid-row: 2/3;
+}
+
+.agentDetail .details {
+    grid-row: 3;
+}
+
+.agentDetail .details ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 2fr;
+}
+
+.detailItem.phone, .detailItem.email {
+    justify-self: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.detailItem.phone {
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.detailItem.email {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.vol, .trans, .exp, .office {
+    justify-self: start;
+    align-self: start;
+}
+
+.detailItem.vol {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.detailItem.trans {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.detailItem.exp {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.detailItem.office {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.office .officeName {
+    font-weight: bold;
+}
+
+.followUpList {
+    list-style-type: lower-alpha;
+}

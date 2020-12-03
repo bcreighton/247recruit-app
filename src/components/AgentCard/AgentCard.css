@@ -1,0 +1,39 @@
+.agentCard {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid lightgray;
+    border-radius: 3px;
+}
+
+.basicDetails ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.agentCardName {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.detailItem, .follow {
+    margin: 5px 0;
+    align-self: center;
+}
+
+.detailTitle {
+    display: block;
+    font-weight: bold;
+}
+
+.follow {
+    width: 80%;
+    margin: 7px auto;
+    padding: 5px;
+    text-align: center;
+}
