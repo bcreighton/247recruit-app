@@ -3,6 +3,7 @@ import Details from '../../Details/Details'
 import FollowUp from '../../FollowUp/FollowUp'
 import Notes from '../../Notes/Notes'
 import agents from '../../../mockData/agentsData'
+import './AgentProfile.css'
 
 class AgentProfile extends Component {
 

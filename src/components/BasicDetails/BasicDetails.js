@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import FollowBTN from '../FollowBTN/FollowBTN'
 
 class BasicDetails extends Component {
   render() {

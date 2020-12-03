@@ -1,6 +1,5 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Brand from './components/Brand/Brand';
 import FollowedAgents from './components/Pages/FollowedAgents/FollowedAgents'
 import Footer from './components/Footer/Footer';
 import Nav from './components/Nav/Nav';
@@ -8,12 +7,14 @@ import AgentProfile from './components/Pages/AgentProfile/AgentProfile';
 import AgentSearch from './components/Pages/AgentSearch/AgentSearch';
 import Landing from './components/Pages/Landing/Landing'
 import Login from './components/Pages/Login/Login'
+import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
+import './reset.css'
+import './App.css'
 
 function App() {
   return (
-    <>
+    <div className='App'>
       <Nav />
-      <Brand />
       <main>
         <Switch>
           <Route 
@@ -23,11 +24,12 @@ function App() {
           <Route path='/agents' component={FollowedAgents} />
           <Route path='/signin' component={Login} />
           <Route path='/search' component={AgentSearch} />
-          <Route path='/' component={Landing} />
+          <Route path='/' exact component={Landing} />
+          <Route component={PageNotFound} />
         </Switch>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

@@ -11,6 +11,7 @@ class AgentSearch extends Component {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur iusto dolor labore totam illum distinctio, fugit veniam impedit similique enim consequuntur ab facilis obcaecati deleniti! Odit asperiores obcaecati voluptatum facere fuga, dolor maiores earum delectus provident cum porro laboriosam, placeat excepturi nostrum harum ad eligendi voluptatibus! Vero id tempore tenetur?</p>
                     <hr />
                     <SearchForm />
+                    <hr />
                 </section>
                 <section className="container">
                     <SearchResults />

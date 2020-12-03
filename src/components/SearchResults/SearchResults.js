@@ -6,21 +6,20 @@ import { Link } from 'react-router-dom'
 class SearchResults extends Component {
     generateSearchResults(agents) {
         return agents.map(agent => (
-            <Link to={`/agent/${agent.id}`} key={agent.id}>
-                <AgentCard
-                    id={agent.id}
-                    name={`${agent.first_name} ${agent.last_name}`}
-                    office_name={agent.office.name}
-                    vol={agent.vol}
-                    trans={agent.trans}
-                    exp={agent.exp}
-                />
-            </Link>
+            <AgentCard
+                id={agent.id}
+                name={`${agent.first_name} ${agent.last_name}`}
+                office_name={agent.office.name}
+                vol={agent.vol}
+                trans={agent.trans}
+                exp={agent.exp}
+            />
         ))
     }
     render() {
         return (
             <>
+                <h2 className="sectionHead">Search Results</h2>
                 {this.generateSearchResults(Agents)}
             </>
         )

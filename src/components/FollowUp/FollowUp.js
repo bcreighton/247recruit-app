@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class FollowUp extends Component {
   render() {
     return (
-      <section className="container">
+      <section className="container followUp">
         <h2 className="sectionHead">Follow Up Tips</h2>
         <ol className="followUpList">
           <li className="followupListItem">
