@@ -6,11 +6,16 @@ import agents from '../../../mockData/agentsData'
 import './AgentProfile.css'
 
 class AgentProfile extends Component {
+  static defaultProps = { match: {params:{ agentId: ''}}}
 
   getAgentId(agents) {
-    return agents.find(agent => {
-      return agent.id.toString() === this.props.match.params.agentId
-    })
+    const urlId = this.props.match.params.agentId
+
+    if (urlId) {
+      return agents.find(agent => {
+        return agent.id.toString() === urlId
+      })
+    }
   }
 
   render() {
@@ -22,7 +27,7 @@ class AgentProfile extends Component {
           agent={selected_agent}
         />
         <FollowUp />
-        <Notes agent_id={selected_agent.id} />
+        <Notes agent={selected_agent} />
       </>
     )
   }

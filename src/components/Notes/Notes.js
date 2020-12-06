@@ -8,7 +8,7 @@ class Notes extends Component {
   getNotesByAgent(notes) {
     return notes.filter(note => {
       return (
-        note.agent_id === this.props.agent_id
+        note.agent_id === this.props.agent.id
       )
     })
   }
