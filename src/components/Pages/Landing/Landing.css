@@ -1,0 +1,14 @@
+.valuePitch {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 5px;
+  justify-content: center;
+  align-content: center;
+}
+
+.valueContainer {
+  grid-row: auto;
+  margin: 20px;
+  padding: 5px;
+}

@@ -1,0 +1,20 @@
+.brand {
+  grid-column: 1/2;
+  justify-self: start;
+  align-self: start;
+}
+
+.brand h1 {
+  margin: 0 0 5px 0;
+  font-size: 1.25rem;
+}
+
+.brand h5 {
+  font-size: .8rem;
+}
+
+nav ul {
+  grid-column: 2/3;
+  justify-self: end;
+  align-self: start;
+}

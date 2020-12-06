@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import DeleteBTN from '../DeleteBTN/DeleteBTN'
 import EditBTN from '../EditBTN/EditBTN'
+import './NoteCard.css'
 
 class NoteCard extends Component {
   render() {
@@ -11,8 +12,10 @@ class NoteCard extends Component {
         <div className="noteContent">
           {this.props.content}
         </div>
-        <EditBTN />
-        <DeleteBTN />
+        <div className="noteBTNs">
+          <EditBTN />
+          <DeleteBTN />
+        </div>
       </div>
     )
   }

@@ -1,0 +1,19 @@
+.noteCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 3px solid lightgray;
+  border-radius: 10px;
+}
+
+.noteDate {
+  font-size: .9rem;
+}
+
+.noteContent {
+  padding: 5px 5px 5px 20px;
+  line-height: 1.25rem;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './FollowUp.css'
 
 class FollowUp extends Component {
   render() {

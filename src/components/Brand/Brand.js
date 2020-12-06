@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Brand extends Component {
   render() {
     return (
-      <div className='brand'>
-        <h1>24/7 REcruit</h1>
-        <h5>The recruiting platform of your dreams...</h5>
-      </div>
+      <Link to='/'>
+        <div className='brand'>
+          <h1>24/7 REcruit</h1>
+          <h5>The recruiting platform of your dreams...</h5>
+        </div>
+      </Link>
     )
   }
 }

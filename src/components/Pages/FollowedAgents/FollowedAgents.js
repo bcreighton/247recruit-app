@@ -8,12 +8,12 @@ import AgentCard from '../../AgentCard/AgentCard'
 class FollowedAgents extends Component {
 
     getUser() {
-        
+
         return users.find(user => user.id === 672) || {}
     }
 
     getFollowedAgents(followedAgents, agents) {
-        
+
 
         return followedAgents.map(followedAgent => {
             return agents.filter(agent => {
@@ -23,34 +23,34 @@ class FollowedAgents extends Component {
     }
 
     generateFollowedAgentsList(agentArr) {
-        
+
         const matchedAgents = []
 
         agentArr.map(agents => (
             agents.map(agent => (
-                    matchedAgents.push(agent)
-                ))
-            )
+                matchedAgents.push(agent)
+            ))
         )
-        
+        )
+
 
         return matchedAgents.map(agent => (
             <Link to={`/agent/${agent.id}`} key={agent.id} >
                 <AgentCard
-                id={agent.id}
-                name={`${agent.first_name} ${agent.last_name}`}
-                office_name={agent.office.name}
-                vol={agent.vol}
-                trans={agent.trans}
-                exp={agent.exp}
-            />
+                    id={agent.id}
+                    name={`${agent.first_name} ${agent.last_name}`}
+                    office_name={agent.office.name}
+                    vol={agent.vol}
+                    trans={agent.trans}
+                    exp={agent.exp}
+                />
             </Link>
         ))
     }
 
     render() {
         const selectedUser = this.getUser()
-        
+
         const followedAgentIds = this.getFollowedAgents(selectedUser.followed_agents, agents)
 
         return (
