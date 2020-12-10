@@ -7,10 +7,15 @@
 .brand h1 {
   margin: 0 0 5px 0;
   font-size: 1.25rem;
+  background: rgb(85,128,233);
+  background: linear-gradient(87deg, rgba(85,128,233,1) 0%, rgba(132,206,235,1) 27%, rgba(138,102,217,1) 50%);
+  -webkit-text-fill-color: transparent; 
+  -webkit-background-clip: text;
 }
 
 .brand h5 {
   font-size: .8rem;
+  color: #8A66D9;
 }
 
 nav ul {

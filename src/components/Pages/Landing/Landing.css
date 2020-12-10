@@ -5,10 +5,17 @@
   gap: 5px;
   justify-content: center;
   align-content: center;
+  padding: 20px 0;
 }
 
 .valueContainer {
   grid-row: auto;
   margin: 20px;
-  padding: 5px;
+  padding: 20px 15px;
+  background-color: #5580E9;
+  color: #fff;
+}
+
+.valueTitle {
+  color: #84CEEB;
 }
