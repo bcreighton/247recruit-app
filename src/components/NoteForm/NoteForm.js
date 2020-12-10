@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './NoteForm.css'
 
 class NoteForm extends Component {
   render() {
@@ -6,11 +7,11 @@ class NoteForm extends Component {
       <section className='container'>
         <form action="" id="note">
           <h4 className="formTitle">Enter A New Note</h4>
-          <label htmlFor="title">Title:</label>
           <input type="text" id='title' name='note_title' />
+          <label htmlFor="title">Title</label>
 
-          <label htmlFor="content">Content:</label>
           <input type="content" id='content' name='note_content' />
+          <label htmlFor="content">Content</label>
 
           <button type='submit'>Save</button>
         </form>
