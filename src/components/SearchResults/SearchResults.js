@@ -20,7 +20,9 @@ class SearchResults extends Component {
         return (
             <>
                 <h2 className="sectionHead">Search Results</h2>
-                {this.generateSearchResults(Agents)}
+                <div className="searchResults">
+                    {this.generateSearchResults(Agents)}
+                </div>
             </>
         )
     }

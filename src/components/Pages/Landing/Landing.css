@@ -1,19 +1,26 @@
-.valuePitch {
+.container.valuePitch {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 5px;
   justify-content: center;
   align-content: center;
+  margin: auto 15px;
   padding: 20px 0;
+  border: 3px solid #5580e9;
+  border-radius: 10px;
 }
 
 .valueContainer {
   grid-row: auto;
   margin: 20px;
   padding: 20px 15px;
-  background-color: #5580E9;
-  color: #fff;
+  border-bottom: 2px solid #5580E9;
+  border-radius: 10px;
+}
+
+.valueContainer:last-of-type {
+  border: none;
 }
 
 .valueTitle {
