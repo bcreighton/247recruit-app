@@ -35,16 +35,15 @@ class FollowedAgents extends Component {
 
 
         return matchedAgents.map(agent => (
-            <Link to={`/agent/${agent.id}`} key={agent.id} >
-                <AgentCard
-                    id={agent.id}
-                    name={`${agent.first_name} ${agent.last_name}`}
-                    office_name={agent.office.name}
-                    vol={agent.vol}
-                    trans={agent.trans}
-                    exp={agent.exp}
-                />
-            </Link>
+            <AgentCard
+                key={agent.id}
+                id={agent.id}
+                name={`${agent.first_name} ${agent.last_name}`}
+                office_name={agent.office.name}
+                vol={agent.vol}
+                trans={agent.trans}
+                exp={agent.exp}
+            />
         ))
     }
 
