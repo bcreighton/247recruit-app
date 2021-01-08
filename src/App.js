@@ -38,7 +38,8 @@ class App extends Component {
     fetch(config.API_ENDPOINT + 'mlsData', {
       method: 'GET',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${config.API_KEY}`,
       }
     })
       .then(res => {
@@ -55,7 +56,8 @@ class App extends Component {
     fetch(config.API_ENDPOINT + 'licenseData', {
       method: 'GET',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${config.API_KEY}`,
       }
     })
       .then(res => {
