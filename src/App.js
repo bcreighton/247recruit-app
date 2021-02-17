@@ -11,31 +11,23 @@ import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
 import config from './config';
 import './reset.css'
 import './App.css'
-import AgentContext from './context/AgentContext';
+import RecruitContext from './context/RecruitContext';
 
 class App extends Component {
   state = {
-    agentMlsData: [],
-    agentLicenseData: [],
+    agents: [],
     error: null,
   }
 
-  setMlsData = agentMlsData => {
+  setAgents = agents => {
     this.setState({
-      agentMlsData,
+      agents,
       error: null,
     })
   }
 
-  setLicenseData = agentLicenseData => {
-    this.setState({
-      agentLicenseData,
-      error: null,
-    })
-  }
-
-  getMlsData = () => {
-    fetch(config.API_ENDPOINT + 'mlsData', {
+  getAgents = () => {
+    fetch(config.API_ENDPOINT + 'agent', {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -48,42 +40,22 @@ class App extends Component {
         }
         return res.json()
       })
-      .then(this.setMlsData)
-      .catch(error => this.setState({ error }))
-  }
-
-  getLicenseData = () => {
-    fetch(config.API_ENDPOINT + 'licenseData', {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'Authorization': `Bearer ${config.API_KEY}`,
-      }
-    })
-      .then(res => {
-        if(!res.ok) {
-          throw new Error(res.status)
-        }
-        return res.json()
-      })
-      .then(this.setLicenseData)
+      .then(this.setAgents)
       .catch(error => this.setState({ error }))
   }
 
   componentDidMount() {
-    this.getMlsData()
-    this.getLicenseData()
+    this.getAgents()
   }
 
   render() {
     const contextValue = {
-      agentMlsData: this.state.agentMlsData,
-      agentLicenseData: this.state.agentLicenseData,
+      agents: this.state.agents,
     }
 
     return (
       <div className='App'>
-        <AgentContext.Provider value={ contextValue }>
+        <RecruitContext.Provider value={ contextValue }>
           <Nav />
           <main>
             <Switch>
@@ -99,7 +71,7 @@ class App extends Component {
             </Switch>
           </main>
           <Footer />
-        </AgentContext.Provider>
+        </RecruitContext.Provider>
       </div>
     )
   }
