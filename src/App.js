@@ -8,11 +8,9 @@ import AgentSearch from './components/Pages/AgentSearch/AgentSearch';
 import Landing from './components/Pages/Landing/Landing'
 import Login from './components/Pages/Login/Login'
 import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
-import config from './config';
 import './reset.css'
 import './App.css'
 import RecruitContext from './context/RecruitContext';
-import RecruitingApiService from './services/recruiting-api-service'
 import RecrutingApiService from './services/recruiting-api-service';
 
 class App extends Component {
@@ -22,26 +20,22 @@ class App extends Component {
   }
 
   setAgents = agents => {
-    debugger;
     return this.setState({
       agents,
       error: null,
     })
   }
 
-  getAgents = () => {
-    RecrutingApiService.getAgents()
+  agentSearch = (search, sort) => {
+    RecrutingApiService.getAgents(search, sort)
       .then(this.setAgents)
       .catch(error => this.setState({ error }))
-  }
-
-  componentDidMount() {
-    this.getAgents();
   }
 
   render() {
     const contextValue = {
       agents: this.state.agents,
+      agentSearch: this.agentSearch,
     }
 
     return (

@@ -1,8 +1,18 @@
 import config from '../config';
 
 const RecrutingApiService = {
-    getAgents() {
-        return fetch(`${config.API_ENDPOINT}/agent`, {
+    getAgents(search, sort) {
+        let reqString = '';
+
+        (!search && !sort)
+            ? reqString = `${config.API_ENDPOINT}/agent`
+            : (!search)
+                ? reqString = `${config.API_ENDPOINT}/agent?sort=${sort}`
+                : (!sort)
+                    ? reqString = `${config.API_ENDPOINT}/agent?search=${search}`
+                    : reqString = `${config.API_ENDPOINT}/agent?search=${search}&sort=${sort}`
+        
+        return fetch(reqString, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
