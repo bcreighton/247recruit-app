@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
+import RecruitContext from '../../context/RecruitContext';
 
 class SearchForm extends Component {
+  static contextType = RecruitContext;
+
+  handleSubmit = e => {
+    e.preventDefault();
+    
+  }
+
   render() {
     return (
       <section className="container">

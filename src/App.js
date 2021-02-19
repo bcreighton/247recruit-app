@@ -12,6 +12,8 @@ import config from './config';
 import './reset.css'
 import './App.css'
 import RecruitContext from './context/RecruitContext';
+import RecruitingApiService from './services/recruiting-api-service'
+import RecrutingApiService from './services/recruiting-api-service';
 
 class App extends Component {
   state = {
@@ -20,32 +22,21 @@ class App extends Component {
   }
 
   setAgents = agents => {
-    this.setState({
+    debugger;
+    return this.setState({
       agents,
       error: null,
     })
   }
 
   getAgents = () => {
-    fetch(config.API_ENDPOINT + 'agent', {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'Authorization': `Bearer ${config.API_KEY}`,
-      }
-    })
-      .then(res => {
-        if(!res.ok) {
-          throw new Error(res.status)
-        }
-        return res.json()
-      })
+    RecrutingApiService.getAgents()
       .then(this.setAgents)
       .catch(error => this.setState({ error }))
   }
 
   componentDidMount() {
-    this.getAgents()
+    this.getAgents();
   }
 
   render() {

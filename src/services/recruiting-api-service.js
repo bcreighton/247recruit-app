@@ -1,7 +1,7 @@
 import config from '../config';
 
 const RecrutingApiService = {
-    getAgents = () => {
+    getAgents() {
         return fetch(`${config.API_ENDPOINT}/agent`, {
             method: 'GET',
             headers: {
@@ -9,14 +9,13 @@ const RecrutingApiService = {
                 'Authorization': `Bearer ${config.API_KEY}`,
             }
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    
-    getAgent = (id) => {
+    getAgent(id) {
         return fetch(`${config.API_ENDPOINT}/agent/${id}`, {
             method: 'GET',
             headers: {
@@ -24,13 +23,13 @@ const RecrutingApiService = {
                 'Authorization': `Bearer ${config.API_KEY}`,
             }
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    getUser = (id) => {
+    getUser(id) {
         return fetch(`${config.API_ENDPOINT}/user/${id}`, {
             method: 'GET',
             headers: {
@@ -38,13 +37,13 @@ const RecrutingApiService = {
                 'Authorization': `Bearer ${config.API_KEY}`,
             }
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    getNotes = () => {
+    getNotes() {
         return fetch(`${config.API_ENDPOINT}/note`, {
             method: 'GET',
             headers: {
@@ -52,13 +51,13 @@ const RecrutingApiService = {
                 'Authorization': `Bearer ${config.API_KEY}`,
             }
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    getNote = (id) => {
+    getNote(id) {
         return fetch(`${config.API_ENDPOINT}/note/${id}`, {
             method: 'GET',
             headers: {
@@ -66,13 +65,13 @@ const RecrutingApiService = {
                 'Authorization': `Bearer ${config.API_KEY}`,
             }
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    getFollowedAgents = (userId) => {
+    getFollowedAgents(userId) {
         return fetch(`${config.API_ENDPOINT}/followed-agent/${userId}`, {
             method: 'GET',
             headers: {
@@ -80,13 +79,13 @@ const RecrutingApiService = {
                 'Authorization': `Bearer ${config.API_KEY}`,
             }
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    addUser = () => {
+    addUser(username, password, first_name, last_name, email, phone, brokerage) {
         return fetch(`${config.API_ENDPOINT}/user`, {
             method: 'POST',
             headers: {
@@ -103,13 +102,13 @@ const RecrutingApiService = {
                 brokerage,
             }),
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    addNote = () => {
+    addNote(title, content, username_id, agent_id) {
         return fetch(`${config.API_ENDPOINT}/note`, {
             method: 'POST',
             headers: {
@@ -123,13 +122,13 @@ const RecrutingApiService = {
                 agent_id
             }),
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    addFollowedAgent: (userId) => {
+    addFollowedAgent(userId, agent_id) {
         return fetch(`${config.API_ENDPOINT}/followed-agent/${userId}`, {
             method: 'POST',
             headers: {
@@ -138,16 +137,16 @@ const RecrutingApiService = {
             },
             body: JSON.stringify({
                 agent_id,
-                user_id,
+                user_id: userId,
             }),
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    updateUser = (id) => {
+    updateUser(id, username, password, first_name, last_name, email, phone, brokerage,) {
         return fetch(`${config.API_ENDPOINT}/user/${id}`, {
             method: 'PATCH',
             headers: {
@@ -164,13 +163,13 @@ const RecrutingApiService = {
                 brokerage,
             }),
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    updateNote = (id) => {
+    updateNote(id, title, content, username_id, agent_id) {
         return fetch(`${config.API_ENDPOINT}/note/${id}`, {
             method: 'PATCH',
             headers: {
@@ -184,13 +183,13 @@ const RecrutingApiService = {
                 agent_id
             }),
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    deleteUser = (id) => {
+    deleteUser(id) {
         return fetch(`${config.API_ENDPOINT}/user/${id}`, {
             method: 'DELETE',
             headers: {
@@ -198,13 +197,13 @@ const RecrutingApiService = {
                 'Authorization': `Bearer ${config.API_KEY}`,
             },
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    deleteNote = (id) => {
+    deleteNote(id) {
         return fetch(`${config.API_ENDPOINT}/note/${id}`, {
             method: 'DELETE',
             headers: {
@@ -212,13 +211,13 @@ const RecrutingApiService = {
                 'Authorization': `Bearer ${config.API_KEY}`,
             },
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
-    deleteFollowedAgent = (userId) => {
+    deleteFollowedAgent(userId, agent_id) {
         return fetch(`${config.API_ENDPOINT}/followed-agent/${userId}`, {
             method: 'DELETE',
             headers: {
@@ -230,11 +229,11 @@ const RecrutingApiService = {
                 user_id: userId,
             })
         })
-            .then(res => {
+            .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            })
+            )
     },
 }
 
