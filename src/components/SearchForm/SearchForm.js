@@ -10,23 +10,23 @@ class SearchForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const {first_name,
-           last_name,
-           office,
-           city,
-           state,
-           zip,
-           county,
-           volume_min,
-           volume_max,
-           transactions_min,
-           transactions_max,
-           experience_min,
-           experience_max
-          } = e.target;
+    const {
+        name,
+        office,
+        city,
+        state,
+        zip,
+        county,
+        volume_min,
+        volume_max,
+        transactions_min,
+        transactions_max,
+        experience_min,
+        experience_max
+    } = e.target;
 
     const search = {
-      name: `${first_name.value} ${last_name.value}`,
+      name: name.value,
       office: office.value,
       city: city.value,
       state: state.value,
@@ -40,7 +40,7 @@ class SearchForm extends Component {
       experience_max: experience_max.value,
     }
     this.setState({error: null})
-    this.context.agentSearch(search.name, 'name')
+    this.context.agentSearch(search.name, this.context.searchSortOption)
   }
 
   render() {
@@ -50,24 +50,18 @@ class SearchForm extends Component {
           id="searchForm"
           onSubmit={this.handleSubmit}  
         >
-          <input 
-            type="text" 
-            id='first_name' 
-            name='first_name' 
-          />
-          <label 
-            htmlFor="first_name">
-            First Name
-          </label>
+    
+        <fieldset id='details'>
+          <legend>Details</legend>
 
           <input 
             type="text" 
-            id='last_name' 
-            name='last_name' 
+            id='name' 
+            name='name' 
           />
           <label 
-            htmlFor="last_name">
-            Last Name
+            htmlFor="name">
+            Name
           </label>
 
           <input 
@@ -119,6 +113,7 @@ class SearchForm extends Component {
             htmlFor="county">
             County
           </label>
+         </fieldset>
 
           <fieldset id='volume'>
             <legend>Volume</legend>

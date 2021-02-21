@@ -12,6 +12,7 @@ const RecrutingApiService = {
                     ? reqString = `${config.API_ENDPOINT}/agent?search=${search}`
                     : reqString = `${config.API_ENDPOINT}/agent?search=${search}&sort=${sort}`
         
+        
         return fetch(reqString, {
             method: 'GET',
             headers: {

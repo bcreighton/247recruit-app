@@ -16,18 +16,34 @@ import RecrutingApiService from './services/recruiting-api-service';
 class App extends Component {
   state = {
     agents: [],
+    searchSortOption: 'Transactions',
     error: null,
   }
 
+  resetAgents = () => {
+    return this.setState({
+      agents: [],
+    })
+  }
+
   setAgents = agents => {
+    this.resetAgents()
     return this.setState({
       agents,
       error: null,
     })
   }
 
-  agentSearch = (search, sort) => {
-    RecrutingApiService.getAgents(search, sort)
+  setSort = searchSortOption => {
+    return this.setState({
+      searchSortOption,
+      error: null,
+    })
+  }
+
+  agentSearch = (search) => {
+    
+    RecrutingApiService.getAgents(search, this.state.searchSortOption)
       .then(this.setAgents)
       .catch(error => this.setState({ error }))
   }
@@ -36,6 +52,8 @@ class App extends Component {
     const contextValue = {
       agents: this.state.agents,
       agentSearch: this.agentSearch,
+      searchSortOption: this.state.searchSortOption,
+      setSort: this.setSort,
     }
 
     return (

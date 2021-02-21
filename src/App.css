@@ -122,6 +122,20 @@ main {
     color: #5580e9;
 }
 
+.sortOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 0.9em;
+    margin: 2px;
+    padding: 10px;
+}
+
+.sortOptions__option input{
+    width: auto;
+    margin-right: 10px;
+}
+
 form {
     padding: 10px;
 }
@@ -153,7 +167,6 @@ input {
     padding: 10px 5px;
     border: none;
     border-bottom: 2px solid #C1C8E4;
-
 }
 
 button {
