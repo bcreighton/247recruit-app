@@ -2,15 +2,23 @@ import config from '../config';
 
 const RecrutingApiService = {
     getAgents(search, sort) {
+        const {name, brokerage} = search;
         let reqString = '';
 
-        (!search && !sort)
+        debugger;
+
+        (!name && !brokerage && !sort)
             ? reqString = `${config.API_ENDPOINT}/agent`
-            : (!search)
+            : (!name && !brokerage)
                 ? reqString = `${config.API_ENDPOINT}/agent?sort=${sort}`
                 : (!sort)
-                    ? reqString = `${config.API_ENDPOINT}/agent?search=${search}`
-                    : reqString = `${config.API_ENDPOINT}/agent?search=${search}&sort=${sort}`
+                    ? (!name)
+                        ? reqString = `${config.API_ENDPOINT}/agent?brokerage=${brokerage}`
+                        : (!brokerage) && (reqString = `${config.API_ENDPOINT}/agent?&sort=${sort}`)
+                    : (!brokerage)
+                        ? (reqString = `${config.API_ENDPOINT}/agent?name=${name}&sort=${sort}`)
+                        : reqString = `${config.API_ENDPOINT}/agent?name=${name}&brokerage=${brokerage}&sort=${sort}`
+                    
         
         
         return fetch(reqString, {

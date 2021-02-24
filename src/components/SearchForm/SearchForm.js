@@ -27,7 +27,7 @@ class SearchForm extends Component {
 
     const search = {
       name: name.value,
-      office: office.value,
+      brokerage: office.value,
       city: city.value,
       state: state.value,
       zip: zip.value,
@@ -40,7 +40,7 @@ class SearchForm extends Component {
       experience_max: experience_max.value,
     }
     this.setState({error: null})
-    this.context.agentSearch(search.name, this.context.searchSortOption)
+    this.context.agentSearch(search, this.context.searchSortOption)
   }
 
   render() {

@@ -11,9 +11,9 @@ class SearchResults extends Component {
                 key={agent.id}
                 id={agent.id}
                 name={`${agent.name}`}
-                office_name={agent.brokerage.brokerage_name}
-                vol={agent.tot_vol}
-                trans={agent.tot_units}
+                office_name={agent.brokerage}
+                vol={agent.vol}
+                trans={agent.trans}
                 exp='1'
             />
         ))

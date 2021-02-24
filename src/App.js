@@ -16,7 +16,7 @@ import RecrutingApiService from './services/recruiting-api-service';
 class App extends Component {
   state = {
     agents: [],
-    searchSortOption: 'Transactions',
+    searchSortOption: 'Ascending',
     error: null,
   }
 
