@@ -6,6 +6,7 @@ const RecruitContext = React.createContext({
     getAgent: () => {},
     getUser: () => {},
     getNotes: () => {},
+    getAgentNotes: () => {},
     getNote: () => {},
     getFollowedAgents: () => {},
     addUser: () => {},

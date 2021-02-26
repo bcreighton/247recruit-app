@@ -1,11 +1,11 @@
 import config from '../config';
 
-const RecrutingApiService = {
+const RecruitingApiService = {
     getAgents(search, sort) {
         const {name, brokerage} = search;
         let reqString = '';
 
-        debugger;
+        
 
         (!name && !brokerage && !sort)
             ? reqString = `${config.API_ENDPOINT}/agent`
@@ -42,11 +42,12 @@ const RecrutingApiService = {
                 'Authorization': `Bearer ${config.API_KEY}`,
             }
         })
-            .then(res =>
-                (!res.ok) 
+            .then(res => {
+                
+                return (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            )
+            })
     },
     getUser(id) {
         return fetch(`${config.API_ENDPOINT}/user/${id}`, {
@@ -66,7 +67,7 @@ const RecrutingApiService = {
         return fetch(`${config.API_ENDPOINT}/note`, {
             method: 'GET',
             headers: {
-                'content-type': 'application/json',
+                'content-type': 'application/json', 
                 'Authorization': `Bearer ${config.API_KEY}`,
             }
         })
@@ -75,6 +76,20 @@ const RecrutingApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             )
+    },
+    getAgentNotes(id) {
+        return fetch(`${config.API_ENDPOINT}/note/agent/${id}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_KEY}`,
+            }
+        })
+            .then(res => 
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+                )
     },
     getNote(id) {
         return fetch(`${config.API_ENDPOINT}/note/${id}`, {
@@ -156,7 +171,7 @@ const RecrutingApiService = {
             },
             body: JSON.stringify({
                 agent_id,
-                user_id: userId,
+                username_id: userId,
             }),
         })
             .then(res =>
@@ -245,7 +260,7 @@ const RecrutingApiService = {
             },
             body: JSON.stringify({
                 agent_id,
-                user_id: userId,
+                username_id: userId,
             })
         })
             .then(res =>
@@ -256,4 +271,4 @@ const RecrutingApiService = {
     },
 }
 
-export default RecrutingApiService;
+export default RecruitingApiService;

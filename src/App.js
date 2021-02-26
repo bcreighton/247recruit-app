@@ -11,15 +11,20 @@ import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
 import './reset.css'
 import './App.css'
 import RecruitContext from './context/RecruitContext';
-import RecrutingApiService from './services/recruiting-api-service';
+import RecruitingApiService from './services/recruiting-api-service';
 
 class App extends Component {
   state = {
+    user: {id: 15},
     agents: [],
+    notes: [],
+    activeAgent: [],
+    followedAgents: [],
     searchSortOption: 'Ascending',
     error: null,
   }
 
+  // AGENT SEARCH FUNCTIONS
   resetAgents = () => {
     return this.setState({
       agents: [],
@@ -42,18 +47,90 @@ class App extends Component {
   }
 
   agentSearch = (search) => {
-    
-    RecrutingApiService.getAgents(search, this.state.searchSortOption)
+    RecruitingApiService.getAgents(search, this.state.searchSortOption)
       .then(this.setAgents)
       .catch(error => this.setState({ error }))
   }
 
+  resetActiveAgent = () => {
+    return this.setState({
+      activeAgent: [],
+    })
+  }
+
+  setActiveAgent = activeAgent => {
+    this.resetActiveAgent()
+    return this.setState({
+      activeAgent,
+      error: null,
+    })
+  }
+
+  getAgent = (id) => {
+    RecruitingApiService.getAgent(id)
+      .then(this.setActiveAgent)
+      .catch(error => this.setState({ error }))
+  }
+
+  // NOTE FUNCTIONS
+
+  resetNotes = () => {
+    return this.setState({
+      notes: [],
+    })
+  }
+
+  setNotes = notes => {
+    return this.setState({
+      notes,
+      error: null,
+    })
+  }
+
+  agentNotes = (id) => {
+    RecruitingApiService.getAgentNotes(id)
+      .then(this.setNotes)
+      .catch(error => this.setState({ error }))
+  }
+
+  resetFollowedAgents = () => {
+    return this.setState({
+      followedAgents: [],
+      error: null,
+    })
+  }
+
+  getFollowedAgents = userId => {
+    RecruitingApiService.getFollowedAgents(userId)
+      .then(this.updateFollowedAgents)
+  }
+
+  updateFollowedAgents = followedAgents => {
+    this.resetFollowedAgents()
+    return this.setState({
+      followedAgents,
+      error: null,
+    })
+  }
+
+  followAgent = (userId, agentId) => {
+    RecruitingApiService.addFollowedAgent(userId, agentId)
+    this.getFollowedAgents(userId)
+  }
+
   render() {
     const contextValue = {
+      user: this.state.user,
       agents: this.state.agents,
+      activeAgent: this.state.activeAgent,
+      followedAgents: this.state.followedAgents,
+      notes: this.state.notes,
       agentSearch: this.agentSearch,
       searchSortOption: this.state.searchSortOption,
       setSort: this.setSort,
+      getAgent: this.getAgent,
+      agentNotes: this.agentNotes,
+      followAgent: this.followAgent,
     }
 
     return (

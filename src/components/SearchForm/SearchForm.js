@@ -13,31 +13,31 @@ class SearchForm extends Component {
     const {
         name,
         office,
-        city,
-        state,
-        zip,
-        county,
-        volume_min,
-        volume_max,
-        transactions_min,
-        transactions_max,
-        experience_min,
-        experience_max
+        // city,
+        // state,
+        // zip,
+        // county,
+        // volume_min,
+        // volume_max,
+        // transactions_min,
+        // transactions_max,
+        // experience_min,
+        // experience_max
     } = e.target;
 
     const search = {
       name: name.value,
       brokerage: office.value,
-      city: city.value,
-      state: state.value,
-      zip: zip.value,
-      county: county.value,
-      volume_min: volume_min.value,
-      volume_max: volume_max.value,
-      transactions_min: transactions_min.value,
-      transactions_max: transactions_max.value,
-      experience_min: experience_min.value,
-      experience_max: experience_max.value,
+      // city: city.value,
+      // state: state.value,
+      // zip: zip.value,
+      // county: county.value,
+      // volume_min: volume_min.value,
+      // volume_max: volume_max.value,
+      // transactions_min: transactions_min.value,
+      // transactions_max: transactions_max.value,
+      // experience_min: experience_min.value,
+      // experience_max: experience_max.value,
     }
     this.setState({error: null})
     this.context.agentSearch(search, this.context.searchSortOption)
@@ -74,7 +74,7 @@ class SearchForm extends Component {
             Office
           </label>
 
-          <input 
+          {/* <input 
             type="text" 
             id='city' 
             name='city' 
@@ -112,10 +112,10 @@ class SearchForm extends Component {
           <label 
             htmlFor="county">
             County
-          </label>
-         </fieldset>
+          </label> */}
+        </fieldset>
 
-          <fieldset id='volume'>
+         {/*  <fieldset id='volume'>
             <legend>Volume</legend>
 
             <input 
@@ -197,7 +197,7 @@ class SearchForm extends Component {
               htmlFor="experience_max">
               Max
             </label>
-          </fieldset>
+          </fieldset> */}
 
           <button type='submit'>Search</button>
           <button type='reset'>Reset</button>
