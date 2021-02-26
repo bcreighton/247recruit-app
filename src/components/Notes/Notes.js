@@ -3,14 +3,13 @@ import NoteCard from '../NoteCard/NoteCard'
 import notes from '../../mockData/notesData'
 import agents from '../../mockData/agentsData'
 import NoteForm from '../NoteForm/NoteForm'
+import RecruitContext from '../../context/RecruitContext'
 
 class Notes extends Component {
-  getNotesByAgent(notes) {
-    return notes.filter(note => {
-      return (
-        note.agent_id === this.props.agent.id
-      )
-    })
+  static contextType = RecruitContext;
+
+  getNotesByAgent(id) {
+    this.context.agentNotes(id)
   }
 
   generateNotesList(notes) {
@@ -29,6 +28,9 @@ class Notes extends Component {
   }
 
   render() {
+    const agentId = this.context.activeAgent.id;
+    
+
     return (
       <section className="container notes">
         <h2 className="sectionHead">Notes</h2>
@@ -36,7 +38,7 @@ class Notes extends Component {
         <NoteForm />
 
         <ul className='noteList'>
-          {this.generateNotesList(notes)}
+          {this.generateNotesList(this.getNotesByAgent(agentId))}
         </ul>
       </section>
     )
