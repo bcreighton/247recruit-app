@@ -6,35 +6,35 @@ class Details extends Component {
   static contextType = RecruitContext;
 
   render() {
-    
+    debugger;
     return (
       <section className="container agentDetail">
-        <h1 className="agentName">{this.props.agent[0].name}</h1>
+        <h1 className="agentName">{this.props.agent.name}</h1>
         <FollowBTN />
         <div className="details">
           <ul>
             <li className="detailItem phone">
-              {this.props.agent[0].phone}
+              {this.props.agent.phone}
             </li>
             <li className="detailItem email">
-              {this.props.agent[0].email}
+              {this.props.agent.email}
             </li>
             <li className="detailItem vol">
               <span className='detailTitle'>Volume: </span>
-              {this.props.agent[0].vol}
+              {this.props.agent.vol}
             </li>
             <li className="detailItem trans">
               <span className='detailTitle'>Transactions: </span>
-              {this.props.agent[0].trans}
+              {this.props.agent.trans}
             </li>
-            <li className="detailItem exp">
+            {/* <li className="detailItem exp">
               <span className='detailTitle'>Experience: </span>
-              {this.props.agent[0].exp} years
-            </li>
+              {this.props.agent.exp} years
+            </li> */}
             <li className="detailItem office">
-              <span className='officeName'>{this.props.agent[0].office.name}</span>
+              <span className='officeName'>{this.props.agent.brokerage_name}</span>
               <br />
-              {`${this.props.agent[0].office.street}, ${this.props.agent.office.city}, ${this.props.agent.office.state} ${this.props.agent.office.zip}`}
+              {`${this.props.agent.brokerage_street}, ${this.props.agent.brokerage_city}, ${this.props.agent.brokerage_state}`}
             </li>
           </ul>
         </div>

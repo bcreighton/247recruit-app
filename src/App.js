@@ -18,7 +18,7 @@ class App extends Component {
     user: {id: 15},
     agents: [],
     notes: [],
-    activeAgent: [],
+    activeAgent: {},
     followedAgents: [],
     searchSortOption: 'Ascending',
     error: null,
@@ -54,7 +54,7 @@ class App extends Component {
 
   resetActiveAgent = () => {
     return this.setState({
-      activeAgent: [],
+      activeAgent: {},
     })
   }
 

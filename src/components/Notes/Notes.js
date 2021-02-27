@@ -4,16 +4,20 @@ import notes from '../../mockData/notesData'
 import agents from '../../mockData/agentsData'
 import NoteForm from '../NoteForm/NoteForm'
 import RecruitContext from '../../context/RecruitContext'
+import RecruitingApiService from '../../services/recruiting-api-service'
 
 class Notes extends Component {
   static contextType = RecruitContext;
 
-  getNotesByAgent(id) {
-    this.context.agentNotes(id)
+  state = {
+    notes: [],
+    error: null,
   }
 
+  
   generateNotesList(notes) {
-    return this.getNotesByAgent(notes).map(note => (
+    debugger;
+    return notes.map(note => (
       <li className='noteListItem' key={note.id}>
         <NoteCard
           id={note.id}
@@ -27,10 +31,17 @@ class Notes extends Component {
     ))
   }
 
-  render() {
-    const agentId = this.context.activeAgent.id;
-    
+  componentDidMount() {
+    RecruitingApiService.getNotes(this.props.agent.id)
+      .then(res => this.setState({
+        notes: [res],
+        errro: null,
+    }))
+    .catch(error => this.setState({ error }))
+  }
 
+
+  render() {
     return (
       <section className="container notes">
         <h2 className="sectionHead">Notes</h2>
@@ -38,7 +49,7 @@ class Notes extends Component {
         <NoteForm />
 
         <ul className='noteList'>
-          {this.generateNotesList(this.getNotesByAgent(agentId))}
+          {this.generateNotesList(this.state.notes)}
         </ul>
       </section>
     )
