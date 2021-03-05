@@ -204,18 +204,19 @@ const RecruitingApiService = {
                     : res.json()
             )
     },
-    updateNote(id, title, content, username_id, agent_id) {
-        return fetch(`${config.API_ENDPOINT}/note/${id}`, {
+    updateNote(updatedNote) {
+        return fetch(`${config.API_ENDPOINT}/note/${updatedNote.id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
                 'Authorization': `Bearer ${config.API_KEY}`,
             },
             body: JSON.stringify({
-                title,
-                content,
-                username_id,
-                agent_id
+                id: updatedNote.id,
+                title: updatedNote.title,
+                content: updatedNote.content,
+                username_id: updatedNote.username_id,
+                agent_id: updatedNote.agent_id,
             }),
         })
             .then(res =>

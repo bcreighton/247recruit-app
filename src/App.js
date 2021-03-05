@@ -20,6 +20,7 @@ class App extends Component {
     agents: [],
     activeAgent: {},
     agentNotes: [],
+    activeNote: {},
     followedAgents: [],
     searchSortOption: 'Ascending',
     error: null,
@@ -117,7 +118,7 @@ class App extends Component {
   }
 
   setAgentNotes = agentNotes => {
-    
+    this.resetAgentNotes()
     return this.setState({
       agentNotes,
       error: null,
@@ -125,9 +126,37 @@ class App extends Component {
   }
 
   getAgentNotes = (agentId) => {
-    
     RecruitingApiService.getAgentNotes(agentId)
       .then(this.setAgentNotes)
+      .catch(error => this.setState({ error }))
+  }
+
+  resetActiveNote = () => {
+    return this.setState({
+      activeNote: {},
+      error: null,
+    })
+  }
+
+  setActiveNote = (activeNote) => {
+    this.resetActiveNote()
+    return this.setState({
+      activeNote,
+      error: null,
+    })
+  }
+
+  getNote = (noteId) => {
+    debugger;
+    RecruitingApiService.getNote(noteId)
+      .then(this.setActiveNote)
+      .catch(error => this.setState({ error }))
+  }
+
+  updateNote = updatedNote => {
+    debugger;
+    RecruitingApiService.updateNote(updatedNote)
+      .then(this.getAgentNotes(updatedNote.agent_id))
       .catch(error => this.setState({ error }))
   }
 
@@ -144,8 +173,11 @@ class App extends Component {
       setSort: this.setSort,
       getAgent: this.getAgent,
       followAgent: this.followAgent,
+      getNote: this.getNote,
       getAgentNotes: this.getAgentNotes,
       agentNotes: this.state.agentNotes,
+      activeNote: this.state.activeNote,
+      updateNote: this.updateNote,
     }
 
     return (

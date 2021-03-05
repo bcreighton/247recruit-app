@@ -73,10 +73,6 @@ class Notes extends Component {
     )
   }
 
-  // componentDidMount() {
-  //   this.context.getAgentNotes(this.context.activeAgent.id)
-  // }
-
 
   render() {
     
