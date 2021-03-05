@@ -13,7 +13,7 @@ class Notes extends Component {
   }
 
   handleNoteSubmit = e => {
-    debugger;
+    
     e.preventDefault();
     const {title, content} = e.target;
 
@@ -23,12 +23,11 @@ class Notes extends Component {
       username_id: this.context.user.id,
       agent_id: parseInt(this.props.agent.id),
     }
-    debugger;
-
+    
     RecruitingApiService.addNote(newNote)
       .then(RecruitingApiService.getAgentNotes(this.props.agent.id)
           .then(res => {
-            debugger;
+            
             return (this.setState({
                 notes: res,
                 error: null,
@@ -37,6 +36,7 @@ class Notes extends Component {
           })
         .catch(error => this.setState({ error }))
       )
+      this.context.resetForm(title, content);
     }
 
 
@@ -85,7 +85,7 @@ class Notes extends Component {
 
   render() {
     return this.state.notes.length ? this.renderNotes()
-    : ( <span>You have not created any notes for this agent.</span> )
+    : ( <span>You have no notes for this agent.</span> )
   }
 }
 

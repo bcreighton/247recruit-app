@@ -23,6 +23,11 @@ class App extends Component {
     error: null,
   }
 
+  // FORM RESET
+  resetForm = (...fields) => {
+    fields.map(field => field.value = '')
+  }
+
   // AGENT SEARCH FUNCTIONS
   resetAgents = () => {
     return this.setState({
@@ -100,6 +105,7 @@ class App extends Component {
 
   render() {
     const contextValue = {
+      resetForm: this.resetForm,
       user: this.state.user,
       agents: this.state.agents,
       activeAgent: this.state.activeAgent,

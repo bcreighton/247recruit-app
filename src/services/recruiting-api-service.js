@@ -143,7 +143,7 @@ const RecruitingApiService = {
             )
     },
     addNote(newNote) {
-        debugger;
+        
         return fetch(`${config.API_ENDPOINT}/note`, {
             method: 'POST',
             headers: {
