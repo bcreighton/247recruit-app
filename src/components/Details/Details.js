@@ -6,7 +6,6 @@ class Details extends Component {
   static contextType = RecruitContext;
 
   render() {
-    debugger;
     return (
       <section className="container agentDetail">
         <h1 className="agentName">{this.props.agent.name}</h1>

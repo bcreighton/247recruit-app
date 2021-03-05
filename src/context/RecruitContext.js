@@ -1,6 +1,7 @@
 import React from 'react'
 
 const RecruitContext = React.createContext({
+    user: {},
     agents: [],
     agentSearch: () => {},
     getAgent: () => {},

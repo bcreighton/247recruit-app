@@ -17,7 +17,6 @@ class App extends Component {
   state = {
     user: {id: 15},
     agents: [],
-    notes: [],
     activeAgent: {},
     followedAgents: [],
     searchSortOption: 'Ascending',
@@ -72,26 +71,7 @@ class App extends Component {
       .catch(error => this.setState({ error }))
   }
 
-  // NOTE FUNCTIONS
-
-  resetNotes = () => {
-    return this.setState({
-      notes: [],
-    })
-  }
-
-  setNotes = notes => {
-    return this.setState({
-      notes,
-      error: null,
-    })
-  }
-
-  agentNotes = (id) => {
-    RecruitingApiService.getAgentNotes(id)
-      .then(this.setNotes)
-      .catch(error => this.setState({ error }))
-  }
+  // FOLLOWED AGENTS
 
   resetFollowedAgents = () => {
     return this.setState({

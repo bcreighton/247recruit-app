@@ -77,6 +77,7 @@ const RecruitingApiService = {
             )
     },
     getAgentNotes(id) {
+        
         return fetch(`${config.API_ENDPOINT}/note/agent/${id}`, {
             method: 'GET',
             headers: {
@@ -141,7 +142,8 @@ const RecruitingApiService = {
                     : res.json()
             )
     },
-    addNote(title, content, username_id, agent_id) {
+    addNote(newNote) {
+        debugger;
         return fetch(`${config.API_ENDPOINT}/note`, {
             method: 'POST',
             headers: {
@@ -149,10 +151,10 @@ const RecruitingApiService = {
                 'Authorization': `Bearer ${config.API_KEY}`,
             },
             body: JSON.stringify({
-                title,
-                content,
-                username_id,
-                agent_id
+                title: newNote.title,
+                content: newNote.content,
+                username_id: newNote.username_id,
+                agent_id: newNote.agent_id,
             }),
         })
             .then(res =>

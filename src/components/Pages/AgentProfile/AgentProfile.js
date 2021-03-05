@@ -18,7 +18,7 @@ class AgentProfile extends Component {
   componentDidMount() {
     RecruitingApiService.getAgent(parseInt(this.props.match.params.agentId))
       .then(res => {
-        debugger;
+        
         return this.setState({
           activeAgent: [res]
       })})
