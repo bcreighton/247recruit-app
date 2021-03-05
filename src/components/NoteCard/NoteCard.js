@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom';
 import DeleteBTN from '../DeleteBTN/DeleteBTN'
 import EditBTN from '../EditBTN/EditBTN'
 import './NoteCard.css'
@@ -18,7 +19,10 @@ class NoteCard extends Component {
           {this.props.content}
         </div>
         <div className="noteBTNs">
-          <EditBTN id={this.props.id} title={this.props.title} content={this.props.content}/>
+          <Link to={`/note/edit/${this.props.id}`}>
+            <EditBTN />
+          </Link>
+
           <DeleteBTN id={this.props.id}/>
         </div>
       </div>

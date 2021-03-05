@@ -11,39 +11,27 @@ class AgentProfile extends Component {
   static defaultProps = { match: {params:{ agentId: ''}}}
 
   state = {
-    activeAgent: [],
     error: null
   }
 
   componentDidMount() {
-    RecruitingApiService.getAgent(parseInt(this.props.match.params.agentId))
-      .then(res => {
-        
-        return this.setState({
-          activeAgent: [res]
-      })})
-      .catch(error => {
-        this.setState({ error })
-        console.log(this.state.error.message)
-      })
+    this.context.getAgent(parseInt(this.props.match.params.agentId))
+    this.context.getAgentNotes(parseInt(this.props.match.params.agentId))
   }
 
   renderAgent(agent) {
     return (
       <>
-        <Details agent={agent}
-        />
+        <Details />
         <FollowUp />
-        <Notes agent={agent} />
+        <Notes />
       </>
     )
   }
 
   render() {
-    const agent = this.state.activeAgent;
     
-
-    return agent.length ? this.renderAgent(agent[0])
+    return this.context.activeAgent !== {} ? this.renderAgent(this.context.activeAgent)
     : ( <span>Loading agent details...</span> )
   }
 }

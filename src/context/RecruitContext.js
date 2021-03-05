@@ -4,6 +4,7 @@ const RecruitContext = React.createContext({
     resetForm: () => {},
     user: {},
     agents: [],
+    agentNotes: [],
     agentSearch: () => {},
     getAgent: () => {},
     getUser: () => {},

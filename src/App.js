@@ -4,6 +4,7 @@ import FollowedAgents from './components/Pages/FollowedAgents/FollowedAgents'
 import Footer from './components/Footer/Footer';
 import Nav from './components/Nav/Nav';
 import AgentProfile from './components/Pages/AgentProfile/AgentProfile';
+import EditNote from './components/Pages/EditNote/EditNote';
 import AgentSearch from './components/Pages/AgentSearch/AgentSearch';
 import Landing from './components/Pages/Landing/Landing'
 import Login from './components/Pages/Login/Login'
@@ -18,6 +19,7 @@ class App extends Component {
     user: {id: 15},
     agents: [],
     activeAgent: {},
+    agentNotes: [],
     followedAgents: [],
     searchSortOption: 'Ascending',
     error: null,
@@ -64,6 +66,7 @@ class App extends Component {
 
   setActiveAgent = activeAgent => {
     this.resetActiveAgent()
+    
     return this.setState({
       activeAgent,
       error: null,
@@ -71,6 +74,7 @@ class App extends Component {
   }
 
   getAgent = (id) => {
+    
     RecruitingApiService.getAgent(id)
       .then(this.setActiveAgent)
       .catch(error => this.setState({ error }))
@@ -103,6 +107,30 @@ class App extends Component {
     this.getFollowedAgents(userId)
   }
 
+  // NOTES
+
+  resetAgentNotes = () => {
+    return this.setState({
+      agentNotes: [],
+      error: null,
+    })
+  }
+
+  setAgentNotes = agentNotes => {
+    
+    return this.setState({
+      agentNotes,
+      error: null,
+    })
+  }
+
+  getAgentNotes = (agentId) => {
+    
+    RecruitingApiService.getAgentNotes(agentId)
+      .then(this.setAgentNotes)
+      .catch(error => this.setState({ error }))
+  }
+
   render() {
     const contextValue = {
       resetForm: this.resetForm,
@@ -115,8 +143,9 @@ class App extends Component {
       searchSortOption: this.state.searchSortOption,
       setSort: this.setSort,
       getAgent: this.getAgent,
-      agentNotes: this.agentNotes,
       followAgent: this.followAgent,
+      getAgentNotes: this.getAgentNotes,
+      agentNotes: this.state.agentNotes,
     }
 
     return (
@@ -128,6 +157,10 @@ class App extends Component {
               <Route 
                 path='/agent/:agentId'
                 component={AgentProfile} 
+              />
+              <Route
+                path='/note/edit/:noteId'
+                component={EditNote}
               />
               <Route path='/agents' component={FollowedAgents} />
               <Route path='/signin' component={Login} />

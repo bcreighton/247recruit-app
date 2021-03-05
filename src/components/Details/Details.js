@@ -8,32 +8,32 @@ class Details extends Component {
   render() {
     return (
       <section className="container agentDetail">
-        <h1 className="agentName">{this.props.agent.name}</h1>
+        <h1 className="agentName">{this.context.activeAgent.name}</h1>
         <FollowBTN />
         <div className="details">
           <ul>
             <li className="detailItem phone">
-              {this.props.agent.phone}
+              {this.context.activeAgent.phone}
             </li>
             <li className="detailItem email">
-              {this.props.agent.email}
+              {this.context.activeAgent.email}
             </li>
             <li className="detailItem vol">
               <span className='detailTitle'>Volume: </span>
-              {this.props.agent.vol}
+              {this.context.activeAgent.vol}
             </li>
             <li className="detailItem trans">
               <span className='detailTitle'>Transactions: </span>
-              {this.props.agent.trans}
+              {this.context.activeAgent.trans}
             </li>
             {/* <li className="detailItem exp">
               <span className='detailTitle'>Experience: </span>
-              {this.props.agent.exp} years
+              {this.context.activeAgent.exp} years
             </li> */}
             <li className="detailItem office">
-              <span className='officeName'>{this.props.agent.brokerage_name}</span>
+              <span className='officeName'>{this.context.activeAgent.brokerage_name}</span>
               <br />
-              {`${this.props.agent.brokerage_street}, ${this.props.agent.brokerage_city}, ${this.props.agent.brokerage_state}`}
+              {`${this.context.activeAgent.brokerage_street}, ${this.context.activeAgent.brokerage_city}, ${this.context.activeAgent.brokerage_state}`}
             </li>
           </ul>
         </div>

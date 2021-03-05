@@ -21,11 +21,11 @@ class Notes extends Component {
       title: title.value,
       content: content.value,
       username_id: this.context.user.id,
-      agent_id: parseInt(this.props.agent.id),
+      agent_id: parseInt(this.context.activeAgent.id),
     }
     
     RecruitingApiService.addNote(newNote)
-      .then(RecruitingApiService.getAgentNotes(this.props.agent.id)
+      .then(RecruitingApiService.getAgentNotes(this.context.activeAgent.id)
           .then(res => {
             
             return (this.setState({
@@ -67,24 +67,20 @@ class Notes extends Component {
         />
 
         <ul className='noteList'>
-          {this.generateNotesList(this.state.notes)}
+          {this.generateNotesList(this.context.agentNotes)}
         </ul>
       </section>
     )
   }
 
-  componentDidMount() {
-    RecruitingApiService.getAgentNotes(this.props.agent.id)
-      .then(res => this.setState({
-        notes: res,
-        error: null,
-    }))
-    .catch(error => this.setState({ error }))
-  }
+  // componentDidMount() {
+  //   this.context.getAgentNotes(this.context.activeAgent.id)
+  // }
 
 
   render() {
-    return this.state.notes.length ? this.renderNotes()
+    
+    return this.context.agentNotes.length ? this.renderNotes()
     : ( <span>You have no notes for this agent.</span> )
   }
 }
