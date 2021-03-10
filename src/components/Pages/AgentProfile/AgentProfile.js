@@ -19,7 +19,7 @@ class AgentProfile extends Component {
     this.context.getAgentNotes(parseInt(this.props.match.params.agentId))
   }
 
-  renderAgent(agent) {
+  renderAgent() {
     return (
       <>
         <Details />

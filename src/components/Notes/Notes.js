@@ -2,13 +2,12 @@ import React, { Component } from 'react'
 import NoteCard from '../NoteCard/NoteCard'
 import NoteForm from '../NoteForm/NoteForm'
 import RecruitContext from '../../context/RecruitContext'
-import RecruitingApiService from '../../services/recruiting-api-service'
 
 class Notes extends Component {
   static contextType = RecruitContext;
 
   state = {
-    notes: [],
+    notes: this.context.agentNotes,
     error: null,
   }
 
@@ -23,26 +22,14 @@ class Notes extends Component {
       username_id: this.context.user.id,
       agent_id: parseInt(this.context.activeAgent.id),
     }
-    
-    RecruitingApiService.addNote(newNote)
-      .then(RecruitingApiService.getAgentNotes(this.context.activeAgent.id)
-          .then(res => {
-            
-            return (this.setState({
-                notes: res,
-                error: null,
-              })
-            )
-          })
-        .catch(error => this.setState({ error }))
-      )
-      this.context.resetForm(title, content);
-    }
+
+    this.context.addNote(newNote);
+    this.context.resetForm(title, content);
+  }
 
 
   
   generateNotesList(notes) {
-    
     return notes.map(note => (
       <li className='noteListItem' key={note.id}>
         <NoteCard
@@ -73,11 +60,23 @@ class Notes extends Component {
     )
   }
 
+  componentWillUnmount() {
+    this.context.getAgentNotes(parseInt(this.context.activeAgent.id))
+  }
+
 
   render() {
     
     return this.context.agentNotes.length ? this.renderNotes()
-    : ( <span>You have no notes for this agent.</span> )
+    : ( 
+        <>
+          <hr />
+          <NoteForm 
+            handleNoteSubmit = {this.handleNoteSubmit}
+          />
+          <span>You have no notes for this agent.</span>
+        </>
+      )
   }
 }
 

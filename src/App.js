@@ -131,6 +131,13 @@ class App extends Component {
       .catch(error => this.setState({ error }))
   }
 
+  addNote = newNote => {
+    RecruitingApiService.addNote(newNote)
+      .then(RecruitingApiService.getAgentNotes(this.state.activeAgent.id))
+      .then(this.setAgentNotes)
+      .catch(error=> this.setState({ error }))
+  }
+
   resetActiveNote = () => {
     return this.setState({
       activeNote: {},
@@ -147,14 +154,12 @@ class App extends Component {
   }
 
   getNote = (noteId) => {
-    debugger;
     RecruitingApiService.getNote(noteId)
       .then(this.setActiveNote)
       .catch(error => this.setState({ error }))
   }
 
   updateNote = updatedNote => {
-    debugger;
     RecruitingApiService.updateNote(updatedNote)
       .then(this.getAgentNotes(updatedNote.agent_id))
       .catch(error => this.setState({ error }))
@@ -175,6 +180,7 @@ class App extends Component {
       followAgent: this.followAgent,
       getNote: this.getNote,
       getAgentNotes: this.getAgentNotes,
+      addNote: this.addNote,
       agentNotes: this.state.agentNotes,
       activeNote: this.state.activeNote,
       updateNote: this.updateNote,
