@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import RecruitContext from '../../context/RecruitContext'
-import RecruitingApiService from '../../services/recruiting-api-service'
 import './NoteForm.css'
 
 class NoteForm extends Component {

@@ -133,8 +133,7 @@ class App extends Component {
 
   addNote = newNote => {
     RecruitingApiService.addNote(newNote)
-      .then(RecruitingApiService.getAgentNotes(this.state.activeAgent.id))
-      .then(this.setAgentNotes)
+      .then(this.getAgentNotes(this.state.activeAgent.id))
       .catch(error=> this.setState({ error }))
   }
 

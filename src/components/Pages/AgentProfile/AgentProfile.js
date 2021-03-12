@@ -4,7 +4,6 @@ import FollowUp from '../../FollowUp/FollowUp'
 import Notes from '../../Notes/Notes'
 import './AgentProfile.css'
 import RecruitContext from '../../../context/RecruitContext'
-import RecruitingApiService from '../../../services/recruiting-api-service'
 
 class AgentProfile extends Component {
   static contextType = RecruitContext;
@@ -16,7 +15,6 @@ class AgentProfile extends Component {
 
   componentDidMount() {
     this.context.getAgent(parseInt(this.props.match.params.agentId))
-    this.context.getAgentNotes(parseInt(this.props.match.params.agentId))
   }
 
   renderAgent() {
@@ -24,7 +22,7 @@ class AgentProfile extends Component {
       <>
         <Details />
         <FollowUp />
-        <Notes />
+        <Notes id={this.props.match.params.agentId}/>
       </>
     )
   }

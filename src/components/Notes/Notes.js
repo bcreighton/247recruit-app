@@ -7,7 +7,6 @@ class Notes extends Component {
   static contextType = RecruitContext;
 
   state = {
-    noteStatus: 'loaded',
     error: null,
   }
 
@@ -25,10 +24,7 @@ class Notes extends Component {
 
     this.context.addNote(newNote);
     this.context.resetForm(title, content);
-    (this.state.noteStatus === 'loaded') ? this.setState({ noteStatus: 'submitted'}) : this.setState({ noteStatus: 'loaded'})
   }
-
-
   
   generateNotesList(notes) {
     return notes.map(note => (
@@ -62,16 +58,14 @@ class Notes extends Component {
   }
 
   componentDidMount() {
-    (this.state.noteStatus !== 'loaded') && this.setState({ noteStatus: 'loaded'})
+    this.context.getAgentNotes(parseInt(this.props.id))
   }
-
 
   render() {
     
     return this.context.agentNotes.length ? this.renderNotes()
     : ( 
         <>
-          <span className='hidden'>{this.state.noteStatus}</span>
           <hr />
           <NoteForm 
             handleNoteSubmit = {this.handleNoteSubmit}

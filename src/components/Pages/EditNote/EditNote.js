@@ -78,7 +78,7 @@ class EditNote extends Component {
                     <label htmlFor="content">Content</label>
 
                     <button type='submit'>Update Note</button>
-                    <button type='button' onClick={this.handleClickCancel}>Cancle</button>
+                    <button type='button' onClick={this.handleClickCancel}>Cancel</button>
                 </form>
             </>
         )
