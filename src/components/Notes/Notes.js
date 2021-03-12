@@ -27,6 +27,12 @@ class Notes extends Component {
 
     this.context.getAgentNotes(parseInt(this.props.id))
   }
+
+  handleDeleteClick = (id) => {
+    debugger;
+    this.context.deleteNote(id)
+    this.context.getAgentNotes(parseInt(this.props.id))
+  }
   
   generateNotesList(notes) {
     return notes.map(note => (
@@ -38,6 +44,7 @@ class Notes extends Component {
           date={note.date}
           agent_id={note.agent_id}
           user_id={note.user_id}
+          handleDeleteClick={this.handleDeleteClick}
         />
       </li>
     ))

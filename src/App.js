@@ -158,9 +158,15 @@ class App extends Component {
       .catch(error => this.setState({ error }))
   }
 
-  updateNote = updatedNote => {
-    RecruitingApiService.updateNote(updatedNote)
-      .then(this.getAgentNotes(updatedNote.agent_id))
+  updateNote = noteToBeUpdated => {
+    RecruitingApiService.updateNote(noteToBeUpdated)
+      .then(this.getAgentNotes(noteToBeUpdated.agent_id))
+      .catch(error => this.setState({ error }))
+  }
+
+  deleteNote = noteIdToBeDeleted => {
+    RecruitingApiService.deleteNote(noteIdToBeDeleted)
+      .then(this.getAgentNotes(noteIdToBeDeleted))
       .catch(error => this.setState({ error }))
   }
 
@@ -183,6 +189,7 @@ class App extends Component {
       agentNotes: this.state.agentNotes,
       activeNote: this.state.activeNote,
       updateNote: this.updateNote,
+      deleteNote: this.deleteNote
     }
 
     return (

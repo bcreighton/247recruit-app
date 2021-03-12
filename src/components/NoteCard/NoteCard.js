@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import DeleteBTN from '../DeleteBTN/DeleteBTN'
 import EditBTN from '../EditBTN/EditBTN'
+import RecruitContext from '../../context/RecruitContext';
 import './NoteCard.css'
 
 class NoteCard extends Component {
+  static contextType = RecruitContext;
+
   state = {
     error: null,
   }
-
 
   render() {
     return (
@@ -23,7 +25,7 @@ class NoteCard extends Component {
             <EditBTN />
           </Link>
 
-          <DeleteBTN id={this.props.id}/>
+          <DeleteBTN id={this.props.id} handleDeleteClick={this.props.handleDeleteClick}/>
         </div>
       </div>
     )
