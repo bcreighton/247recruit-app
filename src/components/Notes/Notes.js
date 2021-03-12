@@ -29,7 +29,6 @@ class Notes extends Component {
   }
 
   handleDeleteClick = (id) => {
-    debugger;
     this.context.deleteNote(id)
     this.context.getAgentNotes(parseInt(this.props.id))
   }

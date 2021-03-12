@@ -240,7 +240,7 @@ const RecruitingApiService = {
             )
     },
     deleteNote(id) {
-        debugger;
+        
         return fetch(`${config.API_ENDPOINT}/note/${id}`, {
             method: 'DELETE',
             headers: {
