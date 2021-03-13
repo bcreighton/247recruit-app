@@ -133,7 +133,11 @@ class App extends Component {
 
   addNote = newNote => {
     RecruitingApiService.addNote(newNote)
-      .then(this.getAgentNotes(this.state.activeAgent.id))
+      .then((note) => { 
+        this.setState({
+          notes: [note, ...this.state.notes]
+        })
+      })
       .catch(error=> this.setState({ error }))
   }
 
@@ -182,6 +186,7 @@ class App extends Component {
       searchSortOption: this.state.searchSortOption,
       setSort: this.setSort,
       getAgent: this.getAgent,
+      getFollowedAgents: this.getFollowedAgents,
       followAgent: this.followAgent,
       getNote: this.getNote,
       getAgentNotes: this.getAgentNotes,

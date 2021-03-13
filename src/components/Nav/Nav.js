@@ -11,6 +11,9 @@ class Nav extends Component {
         <ul>
           <li className="navItem"><Link to='/signin'>Sign In</Link></li>
         </ul>
+        <ul>
+          <li className="navItem"><Link to='/agents'>Followed Agents</Link></li>
+        </ul>
       </nav>
     )
   }

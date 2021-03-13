@@ -5,6 +5,10 @@ import './FollowBTN.css'
 class FollowBTN extends Component {
   static contextType = RecruitContext;
 
+  isAgentFollowed = () => {
+    
+  }
+
   handleClick = () => {
     this.context.followAgent(this.context.user.id, this.props.agentId)
   }

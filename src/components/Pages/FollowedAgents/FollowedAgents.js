@@ -1,61 +1,41 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import agents from '../../../mockData/agentsData'
-import users from '../../../mockData/userData'
+import RecruitContext from '../../../context/RecruitContext'
 import AgentCard from '../../AgentCard/AgentCard'
 
 
 class FollowedAgents extends Component {
+    static contextType = RecruitContext;
 
-    getUser() {
-
-        return users.find(user => user.id === 672) || {}
+    state = {
+        error: null,
     }
 
-    getFollowedAgents(followedAgents, agents) {
-
-
-        return followedAgents.map(followedAgent => {
-            return agents.filter(agent => {
-                return agent.id === followedAgent
-            })
-        })
-    }
-
-    generateFollowedAgentsList(agentArr) {
-
-        const matchedAgents = []
-
-        agentArr.map(agents => (
-            agents.map(agent => (
-                matchedAgents.push(agent)
-            ))
-        )
-        )
-
-
-        return matchedAgents.map(agent => (
+    generateFollowedAgentsList(followedAgents) {
+        return followedAgents.map(agent => (
             <AgentCard
                 key={agent.id}
                 id={agent.id}
-                name={`${agent.first_name} ${agent.last_name}`}
-                office_name={agent.office.name}
+                name={agent.name}
+                office_name={agent.brokerage}
                 vol={agent.vol}
                 trans={agent.trans}
-                exp={agent.exp}
+                // exp={agent.exp}
             />
         ))
     }
 
-    render() {
-        const selectedUser = this.getUser()
+    componentDidMount() {
+        this.context.getFollowedAgents(this.context.user.id)
+    }
 
-        const followedAgentIds = this.getFollowedAgents(selectedUser.followed_agents, agents)
+    render() {
+        const followedAgents = this.generateFollowedAgentsList(this.context.followedAgents)
 
         return (
             <section className="container">
                 <h1 className="sectionTitle">Agents You're Following</h1>
-                {this.generateFollowedAgentsList(followedAgentIds)}
+                {followedAgents}
             </section>
         )
     }
