@@ -75,7 +75,6 @@ class App extends Component {
   }
 
   getAgent = (id) => {
-    
     RecruitingApiService.getAgent(id)
       .then(this.setActiveAgent)
       .catch(error => this.setState({ error }))
@@ -105,7 +104,27 @@ class App extends Component {
 
   followAgent = (userId, agentId) => {
     RecruitingApiService.addFollowedAgent(userId, agentId)
-    this.getFollowedAgents(userId)
+      .then(newFollow => {
+        this.setState({
+          followedAgents: [newFollow, ...this.state.followedAgents]
+        })
+      })
+      .catch(error => this.setState({ error }))
+  }
+
+  unfollowAgent = (userId, agentId) => {
+    RecruitingApiService.deleteFollowedAgent(userId, agentId)
+      .then(agents => {
+        debugger;
+        const updatedFollowedAgents = agents.filter(agent => 
+          agent.agent_id !== agentId && agent.username_id !== userId
+          )
+
+        this.setState({
+          followedAgents:updatedFollowedAgents
+        })
+      })
+      .catch(error => this.setState({ error }))
   }
 
   // NOTES
@@ -135,7 +154,7 @@ class App extends Component {
     RecruitingApiService.addNote(newNote)
       .then((note) => { 
         this.setState({
-          notes: [note, ...this.state.notes]
+          agentNotes: [note, ...this.state.agentNotes]
         })
       })
       .catch(error=> this.setState({ error }))
@@ -169,8 +188,9 @@ class App extends Component {
   }
 
   deleteNote = noteIdToBeDeleted => {
+    debugger;
     RecruitingApiService.deleteNote(noteIdToBeDeleted)
-      .then(this.getAgentNotes(noteIdToBeDeleted))
+      .then(note => {debugger;})
       .catch(error => this.setState({ error }))
   }
 

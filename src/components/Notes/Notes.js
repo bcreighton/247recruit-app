@@ -24,13 +24,10 @@ class Notes extends Component {
 
     this.context.addNote(newNote);
     this.context.resetForm(title, content);
-
-    this.context.getAgentNotes(parseInt(this.props.id))
   }
 
   handleDeleteClick = (id) => {
     this.context.deleteNote(id)
-    this.context.getAgentNotes(parseInt(this.props.id))
   }
   
   generateNotesList(notes) {
