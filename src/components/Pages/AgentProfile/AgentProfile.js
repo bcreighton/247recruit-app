@@ -20,7 +20,7 @@ class AgentProfile extends Component {
   renderAgent() {
     return (
       <>
-        <Details />
+        <Details agentId={this.props.match.params.agentId}/>
         <FollowUp />
         <Notes id={this.props.match.params.agentId}/>
       </>

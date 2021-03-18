@@ -103,6 +103,7 @@ class App extends Component {
   }
 
   followAgent = (userId, agentId) => {
+    debugger;
     RecruitingApiService.addFollowedAgent(userId, agentId)
       .then(newFollow => {
         this.setState({
@@ -207,6 +208,10 @@ class App extends Component {
         })
       })
       .catch(error => this.setState({ error }))
+  }
+
+  componentDidMount() {
+    (this.state.user.id) && this.getFollowedAgents(this.state.user.id)
   }
 
   render() {

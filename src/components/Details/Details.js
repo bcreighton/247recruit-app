@@ -9,7 +9,7 @@ class Details extends Component {
     return (
       <section className="container agentDetail">
         <h1 className="agentName">{this.context.activeAgent.name}</h1>
-        <FollowBTN />
+        <FollowBTN agentId={this.props.agentId}/>
         <div className="details">
           <ul>
             <li className="detailItem phone">
