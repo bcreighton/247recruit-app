@@ -182,7 +182,15 @@ class App extends Component {
 
   updateNote = noteToBeUpdated => {
     RecruitingApiService.updateNote(noteToBeUpdated)
-      .then(this.getAgentNotes(noteToBeUpdated.agent_id))
+      .then(updatedNote => {
+        this.setState(prevState => ({
+          agentNotes: prevState.agentNotes.map(note => {
+            return (note.id === updatedNote.id)
+              ? updatedNote
+              : note
+          })
+        }))
+      })
       .catch(error => this.setState({ error }))
   }
 
