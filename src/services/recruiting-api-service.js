@@ -240,7 +240,6 @@ const RecruitingApiService = {
             )
     },
     deleteNote(id) {
-        
         return fetch(`${config.API_ENDPOINT}/note/${id}`, {
             method: 'DELETE',
             headers: {
@@ -251,7 +250,7 @@ const RecruitingApiService = {
             .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
-                    : res.json()
+                    : id
             )
     },
     deleteFollowedAgent(userId, agent_id) {

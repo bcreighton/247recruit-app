@@ -11,7 +11,6 @@ class Notes extends Component {
   }
 
   handleNoteSubmit = e => {
-    
     e.preventDefault();
     const {title, content} = e.target;
 
