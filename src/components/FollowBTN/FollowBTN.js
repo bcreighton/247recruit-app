@@ -9,30 +9,28 @@ class FollowBTN extends Component {
     followed: false,
   }
 
-  followToggle(id) {
-    const isFollowed = this.context.followedAgents.find(agent => 
-      agent.id === id
-    );
+  isAgentFollowed(id) {
+    const isFollowed = this.context.followToggle(id)
+    debugger;
 
     (!isFollowed)
       ? this.setState({ followed: false })
       : this.setState({ followed: true })
   }
 
-  addFollowedAgent() {
-    this.context.followAgent(this.context.user.id, parseInt(this.props.agentId));
-    this.followToggle(parseInt(this.props.agentId));
-  }
+  // addFollowedAgent() {
+  //   this.context.followAgent(this.context.user.id, parseInt(this.props.agentId));
+  //   this.isAgentFollowed(parseInt(this.props.agentId));
+  // }
 
   handleClick = () => {
-    (!this.state.followed)
-      ? this.addFollowedAgent()
-      : this.followToggle(parseInt(this.props.agentId))
+    (!this.state.followed) && this.context.followAgent(this.context.user.id, parseInt(this.props.agentId));
+
+    this.isAgentFollowed(parseInt(this.props.agentId));
   }
 
   componentDidMount() {
-    debugger;
-    this.followToggle(parseInt(this.props.agentId))
+    this.isAgentFollowed(parseInt(this.props.agentId))
   }
 
   render() {

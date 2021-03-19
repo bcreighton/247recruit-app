@@ -175,11 +175,12 @@ const RecruitingApiService = {
                 username_id: userId,
             }),
         })
-            .then(res =>
-                (!res.ok) 
+            .then(res =>{
+                debugger;
+                return (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            )
+            })
     },
     updateUser(id, username, password, first_name, last_name, email, phone, brokerage,) {
         return fetch(`${config.API_ENDPOINT}/user/${id}`, {

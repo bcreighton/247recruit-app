@@ -106,6 +106,7 @@ class App extends Component {
     debugger;
     RecruitingApiService.addFollowedAgent(userId, agentId)
       .then(newFollow => {
+        debugger;
         this.setState({
           followedAgents: [newFollow, ...this.state.followedAgents]
         })
@@ -125,6 +126,13 @@ class App extends Component {
         })
       })
       .catch(error => this.setState({ error }))
+  }
+
+  followToggle = (id) => {
+    const isFollowed = this.state.followedAgents.find(agent => 
+      agent.id === id
+    );
+    return isFollowed;
   }
 
   // NOTES
@@ -229,6 +237,7 @@ class App extends Component {
       getFollowedAgents: this.getFollowedAgents,
       followAgent: this.followAgent,
       unfollowAgent: this.unfollowAgent,
+      followToggle: this.followToggle,
       getNote: this.getNote,
       getAgentNotes: this.getAgentNotes,
       addNote: this.addNote,
