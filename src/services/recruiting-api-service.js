@@ -176,7 +176,7 @@ const RecruitingApiService = {
             }),
         })
             .then(res =>{
-                debugger;
+                
                 return (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
@@ -269,7 +269,7 @@ const RecruitingApiService = {
             .then(res =>
                 (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
-                    : res.json()
+                    : agent_id
             )
     },
 }

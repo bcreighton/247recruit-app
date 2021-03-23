@@ -10,18 +10,17 @@ const RecruitContext = React.createContext({
     agentSearch: () => {},
     getAgent: () => {},
     getUser: () => {},
-    getNotes: () => {},
     getAgentNotes: () => {},
     getNote: () => {},
     getFollowedAgents: () => {},
     addUser: () => {},
     addNote: () => {},
-    addFollowedAgent: () => {},
+    followAgent: () => {},
     updateUser: () => {},
     updateNote: () => {},
     deleteUser: () => {},
     deleteNote: () => {},
-    deleteFollowedAgent: () => {},
+    unfollowAgent: () => {},
 })
 
 export default RecruitContext;

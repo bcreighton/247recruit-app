@@ -103,10 +103,10 @@ class App extends Component {
   }
 
   followAgent = (userId, agentId) => {
-    debugger;
+    
     RecruitingApiService.addFollowedAgent(userId, agentId)
       .then(newFollow => {
-        debugger;
+        
         this.setState({
           followedAgents: [newFollow, ...this.state.followedAgents]
         })
@@ -115,10 +115,12 @@ class App extends Component {
   }
 
   unfollowAgent = (userId, agentId) => {
+    
     RecruitingApiService.deleteFollowedAgent(userId, agentId)
-      .then(agents => {
-        const updatedFollowedAgents = agents.filter(agent => 
-          agent.agent_id !== agentId && agent.username_id !== userId
+      .then(unfollowedAgentId => {
+        
+        const updatedFollowedAgents = this.state.followedAgents.filter(agent => 
+          agent.id !== unfollowedAgentId
           )
 
         this.setState({
@@ -205,9 +207,9 @@ class App extends Component {
 
   deleteNote = noteIdToBeDeleted => {
     RecruitingApiService.deleteNote(noteIdToBeDeleted)
-      .then(() => {
+      .then(id => {
         const updatedNotes = this.state.agentNotes.filter(note => 
-          note.id !== noteIdToBeDeleted
+          note.id !== id
           )
 
         this.setState({
