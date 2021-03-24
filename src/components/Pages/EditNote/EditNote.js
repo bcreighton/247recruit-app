@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import RecruitContext from '../../../context/RecruitContext';
 import RecruitingApiService from '../../../services/recruiting-api-service';
-import EditBTN from '../../EditBTN/EditBTN';
 
 class EditNote extends Component {
     static contextType = RecruitContext;
 
-    state = {
+    state = { 
         id: '',
         title: '',
         content: '',
