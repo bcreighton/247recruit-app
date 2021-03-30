@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import PrivateRoute from './components/Utils/PrivateRoute';
+import PublicOnlyRoute from './components/Utils/PublicOnlyRoute';
 import FollowedAgents from './components/Pages/FollowedAgents/FollowedAgents'
 import Footer from './components/Footer/Footer';
 import Nav from './components/Nav/Nav';
@@ -248,18 +250,18 @@ class App extends Component {
           <Nav />
           <main>
             <Switch>
-              <Route 
+              <PrivateRoute 
                 path='/agent/:agentId'
                 component={AgentProfile} 
               />
-              <Route
+              <PrivateRoute
                 path='/note/edit/:noteId'
                 component={EditNote}
               />
-              <Route path='/agents' component={FollowedAgents} />
-              <Route path='/signin' component={Login} />
-              <Route path='/search' component={AgentSearch} />
-              <Route path='/' exact component={Landing} />
+              <PrivateRoute path='/agents' component={FollowedAgents} />
+              <PublicOnlyRoute path='/login' component={Login} />
+              <PrivateRoute path='/search' component={AgentSearch} />
+              <PublicOnlyRoute path='/' exact component={Landing} />
               <Route component={PageNotFound} />
             </Switch>
           </main>

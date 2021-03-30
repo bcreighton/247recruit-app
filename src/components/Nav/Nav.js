@@ -15,7 +15,7 @@ class Nav extends Component {
       <nav className='nav_not-logged-in'>
         <Brand />
         <ul>
-          <li className="navItem"><Link to='/signin'>Sign In</Link></li>
+          <li className="navItem"><Link to='/login'>Login</Link></li>
         </ul>
       </nav>
     )
