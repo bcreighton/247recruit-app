@@ -130,13 +130,6 @@ class App extends Component {
       .catch(error => this.setState({ error }))
   }
 
-  followToggle = (id) => {
-    const isFollowed = this.state.followedAgents.find(agent => 
-      agent.id === id
-    );
-    return isFollowed;
-  }
-
   // NOTES
 
   resetAgentNotes = () => {
