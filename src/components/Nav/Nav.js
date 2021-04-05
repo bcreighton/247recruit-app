@@ -27,6 +27,9 @@ class Nav extends Component {
         <Brand />
         <ul>
           <li className="navItem">
+            <Link to='/search'>Find An Agent</Link>
+          </li>
+          <li className="navItem">
             <Link to='/agents'>Followed Agents</Link>
           </li>
           <li className="navItem">
