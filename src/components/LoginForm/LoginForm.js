@@ -10,7 +10,6 @@ class LoginForm extends Component {
   }
 
   handleSubmitBasicAuth = ev => {
-    
     ev.preventDefault();
     const { loginForm_username, loginForm_password } = ev.target
 

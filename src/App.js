@@ -9,12 +9,14 @@ import AgentProfile from './components/Pages/AgentProfile/AgentProfile';
 import EditNote from './components/Pages/EditNote/EditNote';
 import AgentSearch from './components/Pages/AgentSearch/AgentSearch';
 import Landing from './components/Pages/Landing/Landing'
-import Login from './components/Pages/Login/Login'
+import Login from './components/Pages/Login/Login';
+import Registration from './components/Pages/Registration/Registration';
 import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
 import './reset.css'
 import './App.css'
 import RecruitContext from './context/RecruitContext';
 import RecruitingApiService from './services/recruiting-api-service';
+import TokenService from './services/token-service';
 
 class App extends Component {
   state = {
@@ -216,7 +218,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    (this.state.user.id) && this.getFollowedAgents(this.state.user.id)
+    (TokenService.hasAuthToken()) && this.getFollowedAgents(this.state.user.id)
   }
 
   render() {
@@ -260,6 +262,7 @@ class App extends Component {
               />
               <PrivateRoute path='/agents' component={FollowedAgents} />
               <PublicOnlyRoute path='/login' component={Login} />
+              <PublicOnlyRoute path='/register' component={Registration} />
               <PrivateRoute path='/search' component={AgentSearch} />
               <PublicOnlyRoute path='/' exact component={Landing} />
               <Route component={PageNotFound} />

@@ -24,7 +24,7 @@ const RecruitingApiService = {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
             .then(res =>{
@@ -39,7 +39,7 @@ const RecruitingApiService = {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
             .then(res => {
@@ -53,7 +53,7 @@ const RecruitingApiService = {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
             .then(res =>
@@ -67,7 +67,7 @@ const RecruitingApiService = {
             method: 'GET',
             headers: {
                 'content-type': 'application/json', 
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
             .then(res =>
@@ -82,7 +82,7 @@ const RecruitingApiService = {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
             .then(res => 
@@ -96,7 +96,7 @@ const RecruitingApiService = {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
             .then(res =>
@@ -110,7 +110,7 @@ const RecruitingApiService = {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
             .then(res =>
@@ -124,7 +124,7 @@ const RecruitingApiService = {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify({
                 username,
@@ -148,7 +148,7 @@ const RecruitingApiService = {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify({
                 title: newNote.title,
@@ -168,7 +168,7 @@ const RecruitingApiService = {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify({
                 agent_id,
@@ -187,7 +187,7 @@ const RecruitingApiService = {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify({
                 username,
@@ -210,7 +210,7 @@ const RecruitingApiService = {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify({
                 id: updatedNote.id,
@@ -231,7 +231,7 @@ const RecruitingApiService = {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
             .then(res =>
@@ -245,7 +245,7 @@ const RecruitingApiService = {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
             .then(res =>
@@ -259,7 +259,7 @@ const RecruitingApiService = {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify({
                 agent_id,

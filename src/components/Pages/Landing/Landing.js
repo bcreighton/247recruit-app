@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Footer from '../../Footer/Footer'
-import RegistrationFrom from '../../RegistrationForm/RegistrationForm'
+import RegistrationFrom from '../../GetStartedForm/GetStartedForm'
 import './Landing.css'
 
 class Landing extends Component {
@@ -8,7 +7,12 @@ class Landing extends Component {
     return (
       <>
         <section className="container hero">
-          <RegistrationFrom />
+          <RegistrationFrom 
+            id='getStartedForm1'
+            nameId='getStartedForm1-name'
+            emailId='getStartedForm1-email'
+            passwordId='getStartedForm1-password'
+          />
         </section>
         <section className="container valuePitch">
           <div className="valueContainer">
@@ -41,7 +45,12 @@ class Landing extends Component {
         </section>
 
         <section className="container">
-          <RegistrationFrom />
+          <RegistrationFrom 
+            id='getStartedForm2'
+            nameId='getStartedForm2-name'
+            emailId='getStartedForm2-email'
+            passwordId='getStartedForm2-password'
+          />
         </section>
       </>
     )
