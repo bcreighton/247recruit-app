@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import './LoginForm.css'
@@ -52,6 +53,7 @@ class LoginForm extends Component {
           <input required type="password" id='loginForm_password' name='user_password' />
           <label htmlFor="loginForm_password">Password</label>
 
+          <button><Link to='/register'>Register</Link></button>
           <button type='submit'>Sign In</button>
         </form>
       </section>

@@ -2,18 +2,14 @@ import React, { Component } from 'react'
 import RegistrationForm from '../../RegistrationForm/RegistrationForm';
 
 class Registration extends Component {
-    // static defaultProps = {
-    //     location: {},
-    //     history: {
-    //         push: () => {},
-    //     }
-    // }
-
-    // handleLoginSuccess = () => {
-    //     const { location, history } = this.props
-    //     const destination = (location.state || {}).from || '/search';
-    //     history.push(destination)
-    // }
+    static defaultProps = {
+        // location: {},
+        // history: {
+        //     push: () => {},
+        // },
+        name: '',
+        email: '',
+    }
     
     render() {
 
