@@ -1,14 +1,13 @@
-import React, { Component } from 'react'
-import Footer from '../../Footer/Footer'
-import RegistrationFrom from '../../RegistrationForm/RegistrationForm'
-import './Landing.css'
+import React, { Component } from 'react';
+import GetStartedBTN from '../../GetStartedBTN/GetStartedBTN';
+import './Landing.css';
 
 class Landing extends Component {
   render() {
     return (
       <>
         <section className="container hero">
-          <RegistrationFrom />
+          <GetStartedBTN />
         </section>
         <section className="container valuePitch">
           <div className="valueContainer">
@@ -41,7 +40,7 @@ class Landing extends Component {
         </section>
 
         <section className="container">
-          <RegistrationFrom />
+          <GetStartedBTN />
         </section>
       </>
     )

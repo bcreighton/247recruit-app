@@ -43,12 +43,18 @@ class SearchForm extends Component {
     this.context.agentSearch(search, this.context.searchSortOption)
   }
 
+  handleReset = e => {
+    e.preventDefault();
+    this.context.resetForm(e.target.name, e.target.office);
+  }
+
   render() {
     return (
       <section className="container">
         <form 
           id="searchForm"
-          onSubmit={this.handleSubmit}  
+          onSubmit={this.handleSubmit}
+          onReset={this.handleReset}
         >
     
         <fieldset id='details'>
