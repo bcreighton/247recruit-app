@@ -67,8 +67,9 @@ class EditNote extends Component {
                     />
                     <label htmlFor="title">Title</label>
 
-                    <input 
-                        type="content" 
+                    <textarea 
+                        rows='5'
+                        cols='100'
                         id='content' 
                         name='content' 
                         value={content}
@@ -76,8 +77,10 @@ class EditNote extends Component {
                     />
                     <label htmlFor="content">Content</label>
 
-                    <button type='submit'>Update Note</button>
-                    <button type='button' onClick={this.handleClickCancel}>Cancel</button>
+                    <div className='noteBTNs'>
+                        <button type='submit'>Update Note</button>
+                        <button className='cancel' onClick={this.handleClickCancel}>Cancel</button>
+                    </div>
                 </form>
             </>
         )
