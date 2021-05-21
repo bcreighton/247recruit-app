@@ -11,7 +11,7 @@ class SearchSort extends Component {
 
   render() {
     return (
-      <section className="container">
+      <section className="container searchSort">
         <fieldset id='sortOptions' className='sortOptions'>
               <legend>Sort by:</legend>
 

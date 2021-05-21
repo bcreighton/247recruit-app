@@ -9,7 +9,9 @@ class AgentSearch extends Component {
             <>
                 <section className='container'>
                     <h1>Find Agents</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur iusto dolor labore totam illum distinctio, fugit veniam impedit similique enim consequuntur ab facilis obcaecati deleniti! Odit asperiores obcaecati voluptatum facere fuga, dolor maiores earum delectus provident cum porro laboriosam, placeat excepturi nostrum harum ad eligendi voluptatibus! Vero id tempore tenetur?</p>
+                    <p>Select how you would like your search to be sorted and find agents by name or by the office they're with.</p>
+                    <h3>Here's a tip!!</h3>
+                    <p>Don't focus soley on production or experience; new and "unexpereinced" agents are necessary for the longterm growth of your brokerage!!</p>
                     <hr />
                     <SearchSort />
                     <SearchForm />

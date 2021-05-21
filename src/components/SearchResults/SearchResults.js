@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AgentCard from '../AgentCard/AgentCard'
 import RecruitContext from '../../context/RecruitContext'
+import './SearchResults.css'
 
 class SearchResults extends Component {
     static contextType = RecruitContext;

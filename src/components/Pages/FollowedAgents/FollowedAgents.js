@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import RecruitContext from '../../../context/RecruitContext'
 import AgentCard from '../../AgentCard/AgentCard'
 
@@ -20,7 +19,7 @@ class FollowedAgents extends Component {
                 office_name={agent.brokerage}
                 vol={agent.vol}
                 trans={agent.trans}
-                // exp={agent.exp}
+                //exp={agent.exp}
             />
         ))
     }

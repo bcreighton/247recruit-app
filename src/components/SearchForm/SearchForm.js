@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RecruitContext from '../../context/RecruitContext';
+import './SearchForm.css';
 
 class SearchForm extends Component {
   static contextType = RecruitContext;
@@ -50,7 +51,7 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <section className="container">
+      <section className="container searchForm">
         <form 
           id="searchForm"
           onSubmit={this.handleSubmit}
