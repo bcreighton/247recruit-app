@@ -19,9 +19,10 @@ class FollowBTN extends Component {
 
   render() {
     const followStatus = this.isAgentFollowed() ? "Unfollow" : "Follow"
+    const followBtnClass = followStatus === "Unfollow" ? "followed" : "notfollowed"
 
     return (
-      <button className="follow" onClick={this.handleClick}>{followStatus}</button>
+      <button className={followBtnClass} onClick={this.handleClick}>{followStatus}</button>
     )
   }
 }

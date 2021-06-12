@@ -1,4 +1,9 @@
-.follow {
+.followed {
+  background: #6e0000;
+  text-transform: uppercase;
+}
+
+.notfollowed {
   background: #84CEEB;
   text-transform: uppercase;
 }

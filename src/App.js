@@ -103,7 +103,6 @@ class App extends Component {
   }
 
   followAgent = (userId, agentId) => {
-    
     RecruitingApiService.addFollowedAgent(userId, agentId)
       .then(newFollow => {
         
@@ -115,7 +114,6 @@ class App extends Component {
   }
 
   unfollowAgent = (userId, agentId) => {
-    
     RecruitingApiService.deleteFollowedAgent(userId, agentId)
       .then(unfollowedAgentId => {
         
