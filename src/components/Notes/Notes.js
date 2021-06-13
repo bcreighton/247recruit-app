@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import dateFormat from 'dateformat';
 import NoteCard from '../NoteCard/NoteCard'
 import NoteForm from '../NoteForm/NoteForm'
 import RecruitContext from '../../context/RecruitContext'
@@ -36,7 +37,7 @@ class Notes extends Component {
           id={note.id}
           title={note.title}
           content={note.content}
-          date={note.date}
+          timestamp={dateFormat(note.timestamp, "UTC:dddd, mmmm dS, yyyy, H:MM:ss")}
           agent_id={note.agent_id}
           user_id={note.user_id}
           handleDeleteClick={this.handleDeleteClick}

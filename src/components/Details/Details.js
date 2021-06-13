@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RecruitContext from '../../context/RecruitContext';
+import NumberFormat from 'react-number-format';
 import FollowBTN from '../FollowBTN/FollowBTN'
 
 class Details extends Component {
@@ -20,11 +21,11 @@ class Details extends Component {
             </li>
             <li className="detailItem vol">
               <span className='detailTitle'>Volume: </span>
-              {this.context.activeAgent.vol}
+              <NumberFormat value={this.context.activeAgent.vol} displayType={'text'} thousandSeparator={true} prefix={'$'} />
             </li>
             <li className="detailItem trans">
               <span className='detailTitle'>Transactions: </span>
-              {this.context.activeAgent.trans}
+              <NumberFormat value={this.context.activeAgent.trans} displayType={'text'} thousandSeparator={true} />
             </li>
             {/* <li className="detailItem exp">
               <span className='detailTitle'>Experience: </span>
