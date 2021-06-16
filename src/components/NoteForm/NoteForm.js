@@ -19,8 +19,9 @@ class NoteForm extends Component {
 
           <input type="content" id='content' name='content' />
           <label htmlFor="content">Content</label>
-
-          <button type='submit'>Save</button>
+          <div className="btnContainer">
+            <button type='submit'>Save</button>
+          </div>
         </form>
       </section>
     )

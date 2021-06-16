@@ -65,7 +65,13 @@
     grid-row: 4/5;
 }
 
-.detailItem.office {
+.detailItem.officeName {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    font-weight: bold;
+}
+
+.detailItem.officeAddress {
     grid-column: 2/3;
     grid-row: 4/5;
 }
@@ -75,5 +81,5 @@
 }
 
 .followUpList {
-    list-style-type: lower-alpha;
+    list-style-type:square;
 }

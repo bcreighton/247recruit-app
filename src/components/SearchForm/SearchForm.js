@@ -205,10 +205,10 @@ class SearchForm extends Component {
               Max
             </label>
           </fieldset> */}
-
-          <button type='submit'>Search</button>
-          <button type='reset'>Reset</button>
-
+          <div className="btnContainer">
+              <button type='submit'>Search</button>
+              <button type='reset'>Reset</button>
+          </div>
         </form>
       </section>
     )

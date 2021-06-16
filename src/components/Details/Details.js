@@ -31,10 +31,13 @@ class Details extends Component {
               <span className='detailTitle'>Experience: </span>
               {this.context.activeAgent.exp} years
             </li> */}
-            <li className="detailItem office">
-              <span className='officeName'>{this.context.activeAgent.brokerage_name}</span>
-              <br />
-              {`${this.context.activeAgent.brokerage_street}, ${this.context.activeAgent.brokerage_city}, ${this.context.activeAgent.brokerage_state}`}
+            <li className="detailItem officeName">
+              <span className='officeName'>{this.context.activeAgent.brokerage}</span>
+            </li>
+            <li className='detailItem officeAddress'>
+              {`${this.context.activeAgent.brokerage_street}`}
+              <br></br>
+              {`${this.context.activeAgent.brokerage_city}, ${this.context.activeAgent.brokerage_state}`}
             </li>
           </ul>
         </div>

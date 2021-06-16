@@ -30,7 +30,7 @@ class Notes extends Component {
     this.context.deleteNote(id)
   }
   
-  generateNotesList(notes) {
+  generateNotesList = (notes) => {
     return notes.map(note => (
       <li className='noteListItem' key={note.id}>
         <NoteCard
