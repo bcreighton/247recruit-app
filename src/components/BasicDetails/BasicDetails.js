@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import NumberFormat from 'react-number-format';
 import FollowBTN from '../FollowBTN/FollowBTN'
 
 class BasicDetails extends Component {
@@ -9,16 +10,16 @@ class BasicDetails extends Component {
           <li className="detailItem agentCardName">
             {this.props.agent.name}
           </li>
-          <li className="detailItem agentOffice">
+          <li className="detailItem agentOffice2">
             {this.props.agent.office_name}
           </li>
           <li className="detailItem">
             <span className='detailTitle'>Volume: </span>
-            {this.props.agent.vol}
+            <NumberFormat value={this.props.agent.vol} displayType={'text'} thousandSeparator={true} prefix={'$'} />
           </li>
           <li className="detailItem">
             <span className='detailTitle'>Transactions: </span>
-            {this.props.agent.trans}
+            <NumberFormat value={this.props.agent.trans} npm displayType={'text'} thousandSeparator={true} />
           </li>
           <li className="detailItem">
             <span className='detailTitle'>Experience: </span>

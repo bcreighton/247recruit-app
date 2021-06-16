@@ -1,18 +1,21 @@
 import React, { Component } from 'react'
 import AgentCard from '../AgentCard/AgentCard'
-import Agents from '../../mockData/agentsData'
-import { Link } from 'react-router-dom'
+import RecruitContext from '../../context/RecruitContext'
+import './SearchResults.css'
 
 class SearchResults extends Component {
-    generateSearchResults(agents) {
+    static contextType = RecruitContext;
+
+    generateAgentList(agents) {
         return agents.map(agent => (
             <AgentCard
+                key={agent.id}
                 id={agent.id}
-                name={`${agent.first_name} ${agent.last_name}`}
-                office_name={agent.office.name}
+                name={`${agent.name}`}
+                office_name={agent.brokerage}
                 vol={agent.vol}
                 trans={agent.trans}
-                exp={agent.exp}
+                exp='1'
             />
         ))
     }
@@ -21,7 +24,7 @@ class SearchResults extends Component {
             <>
                 <h2 className="sectionHead">Search Results</h2>
                 <div className="searchResults">
-                    {this.generateSearchResults(Agents)}
+                    {this.generateAgentList(this.context.agents)}
                 </div>
             </>
         )

@@ -85,8 +85,13 @@ a {
     color: black; 
 }
 
+.hidden {
+    display: none;
+}
+
 .App {
     display: grid;
+    max-width: 100vw;
     height: 100vh;
     grid-template-rows: 75px auto 75px;
 }
@@ -94,7 +99,7 @@ a {
 nav {
     grid-row: 1 / 2; 
     display: grid;
-    margin: 10px;
+    margin: 10px 30px;
     padding: 5px;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
@@ -114,12 +119,35 @@ main {
 }
 
 .container {
-    max-width: 100%;
-    padding: 20px 30px;
+    max-width: 98%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .sectionHead {
     color: #5580e9;
+}
+
+.sortOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 0.9em;
+    margin: 2px;
+    padding: 10px;
+}
+
+.sortOptions__option{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: auto;
+    justify-content: center;
+    margin: 5px auto;
+}
+
+div#sortOptions.sortOptions_option input[type=radio] {
+    margin: 50px;
 }
 
 form {
@@ -148,18 +176,22 @@ label {
     color: #5580E9;
 }
 
-input {
+input, textarea{
     width: 100%;
     padding: 10px 5px;
     border: none;
     border-bottom: 2px solid #C1C8E4;
+}
 
+ol {
+    list-style-type: decimal;
 }
 
 button {
     border: none;
     font-size: .8rem;
-    min-width: 200px;
+    min-width: 125px;
+    cursor: pointer;
 }
 
 button, button a {
@@ -167,15 +199,30 @@ button, button a {
     font-weight: bold;
 }
 
-button[type=submit], button[type=reset] {
+.getStarted {
     display: block;
     margin: 20px auto;
+    font-size: 1.5rem;
+    padding: 15px;
+}
+
+.btnContainer {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+button[type=submit], button[type=reset] {
+    display: inline-block;
+    margin: 20px;
+}
+
+button[type=submit], button[type=reset], .getStarted {
     padding: 5px 20px;
     text-align: center;
     text-transform: uppercase;
 }
 
-button[type=submit] {
+button[type=submit], .getStarted, .edit{
     background: rgb(138,102,217);
 background: -moz-linear-gradient(90deg, rgba(138,102,217,1) 34%, rgba(96,99,224,1) 50%, rgba(85,128,233,1) 72%);
 background: -webkit-linear-gradient(90deg, rgba(138,102,217,1) 34%, rgba(96,99,224,1) 50%, rgba(85,128,233,1) 72%);
@@ -183,8 +230,32 @@ background: linear-gradient(90deg, rgba(138,102,217,1) 34%, rgba(96,99,224,1) 50
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8a66d9",endColorstr="#5580e9",GradientType=1);
 }
 
-button[type=reset] {
-    background: #C1C8E4;
+button[type=reset], .delete, .cancel {
+    background: #920000;
+    color: #ebebeb;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.noteBTNs {
+    text-align: right;
+}
+
+.edit, .delete, .cancel{
+    margin: 5px 10px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+#editNoteForm button {
+    display: inline-block;
+}
+
+textarea#content {
+    display: block;
+    overflow: auto;
+    resize: none;
+    outline: none;
 }
 
 footer {

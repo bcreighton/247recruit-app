@@ -2,34 +2,35 @@ import React, { Component } from 'react'
 import Details from '../../Details/Details'
 import FollowUp from '../../FollowUp/FollowUp'
 import Notes from '../../Notes/Notes'
-import agents from '../../../mockData/agentsData'
 import './AgentProfile.css'
+import RecruitContext from '../../../context/RecruitContext'
 
 class AgentProfile extends Component {
+  static contextType = RecruitContext;
   static defaultProps = { match: {params:{ agentId: ''}}}
 
-  getAgentId(agents) {
-    const urlId = this.props.match.params.agentId
+  state = {
+    error: null
+  }
 
-    if (urlId) {
-      return agents.find(agent => {
-        return agent.id.toString() === urlId
-      })
-    }
+  componentDidMount() {
+    this.context.getAgent(parseInt(this.props.match.params.agentId))
+  }
+
+  renderAgent() {
+    return (
+      <>
+        <Details agentId={this.props.match.params.agentId}/>
+        <FollowUp />
+        <Notes id={this.props.match.params.agentId}/>
+      </>
+    )
   }
 
   render() {
-    const selected_agent = this.getAgentId(agents)
-
-    return (
-      <>
-        <Details
-          agent={selected_agent}
-        />
-        <FollowUp />
-        <Notes agent={selected_agent} />
-      </>
-    )
+    
+    return this.context.activeAgent !== {} ? this.renderAgent(this.context.activeAgent)
+    : ( <span>Loading agent details...</span> )
   }
 }
 
