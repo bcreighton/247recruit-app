@@ -183,6 +183,10 @@ input, textarea{
     border-bottom: 2px solid #C1C8E4;
 }
 
+ol {
+    list-style-type: decimal;
+}
+
 button {
     border: none;
     font-size: .8rem;
