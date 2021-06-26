@@ -20,11 +20,13 @@ class SearchResults extends Component {
         ))
     }
     render() {
+        const agents = this.generateAgentList(this.context.agents);
+
         return (
             <>
                 <h2 className="sectionHead">Search Results</h2>
                 <div className="searchResults">
-                    {this.generateAgentList(this.context.agents)}
+                    {agents}
                 </div>
             </>
         )
