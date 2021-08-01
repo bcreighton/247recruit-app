@@ -55,3 +55,57 @@ legend {
     width: 100%;
     height: 1.75em;
 }
+
+/* Responsive Mobile Styling */
+
+@media screen and (min-width: 480px) {
+    .sortOptions {
+        grid-template-columns: 1.75fr 3fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    legend {
+        grid-column: 1/2;
+    }
+
+    #ascend {
+        grid-row: 2/3;
+        grid-column: 1/3;
+        
+    }
+    
+    #descend {
+        grid-row: 3/4;
+        grid-column: 1/3;
+    }
+    
+    #trans {
+        grid-row: 2/3;
+        grid-column: 3/4;
+    }
+    
+    #vol {
+        grid-row: 3/4;
+        grid-column: 3/4;
+    }
+}
+
+@media screen and (max-width: 675px) {
+
+}
+
+@media screen and (max-width: 750px) {
+
+}
+
+@media screen and (max-width: 1015px) {
+
+}
+
+@media screen and (max-width: 1225px) {
+
+}
+
+@media screen and (max-width: 1360px) {
+
+}
