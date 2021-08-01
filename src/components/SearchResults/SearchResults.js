@@ -27,7 +27,7 @@ class SearchResults extends Component {
             <>
                 <h2 className="sectionHead">Search Results</h2>
                 <div className="error" role='alert'>
-                    {error && <p>{ error.error.message }</p>}
+                    {error && <p>{ error.message }</p>}
                 </div>
                 <div className="searchResults">
                     {this.generateAgentList(this.context.agents)}
