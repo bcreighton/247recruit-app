@@ -1,31 +1,44 @@
 .brand {
-  grid-column: 1/2;
-  justify-self: start;
-  align-self: start;
+  grid-row: 1/2;
+  margin-bottom: 20px;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
 }
 
 .brand h1 {
   margin: 0 0 5px 0;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   background: rgb(85,128,233);
-  background: linear-gradient(87deg, rgba(85,128,233,1) 0%, rgba(132,206,235,1) 27%, rgba(138,102,217,1) 50%);
+  background: linear-gradient(87deg, rgba(90, 184, 235,1) 0%, rgba(132,206,235,1) 27%, rgba(255,255,255,1) 50%);
   -webkit-text-fill-color: transparent; 
   -webkit-background-clip: text;
 }
 
 .brand h5 {
   font-size: .8rem;
-  color: #8A66D9;
+  color: #FFF;
 }
 
 nav ul {
-  grid-column: 2/3;
-  justify-self: end;
-  align-self: start;
-  text-align: right;
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .navItem {
   display: inline-block;
   margin: 0 10px;
+}
+
+nav a {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #84CEEB;
+}
+
+nav a:hover {
+  color: #FFF;
 }

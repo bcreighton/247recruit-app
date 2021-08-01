@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import RecruitContext from '../../../context/RecruitContext'
 import AgentCard from '../../AgentCard/AgentCard'
 
@@ -34,7 +35,7 @@ class FollowedAgents extends Component {
         return (
             <section className="container">
                 <h1 className="sectionTitle">Agents You're Following</h1>
-                {followedAgents}
+                {followedAgents.length > 0 ? followedAgents : <p className='notification'>You are not following any agents; please visit <Link to='/search'>"Find Agents"</Link> to search for agents to follow. </p>}
             </section>
         )
     }

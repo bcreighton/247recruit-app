@@ -4,11 +4,13 @@
 }
 
 .heroTitle {
-  color: #8A66D9;
+  font-size: 1.75rem;
+  color: #84CEEB;
 }
 
 .heroValue {
   line-height: 1.6rem;
+  color: #fff;
 }
 
 .instructions {
@@ -17,7 +19,7 @@
 }
 
 .disclaimer {
-  color: rgb(130, 0, 0);
+  color: rgb(49, 49, 49);
   font-size: .8rem;
 }
 
@@ -27,13 +29,14 @@
 
 .instructions h2 {
   margin: 40px 20px 20px;
-  color: #8A66D9;
+  color: #84CEEB;
 }
 
 .instructions ol li {
   margin-bottom: 20px;
   font-size: 1.2rem;
   font-weight: 600;
+  color: #fff;
 }
 
 .container.valuePitch {
@@ -55,6 +58,7 @@
   margin:  20px 20px 0px;
   padding: 20px 15px;
   border-bottom: 2px solid #5580E9;
+  color: #fff;
   /* border-radius: 10px; */
 }
 

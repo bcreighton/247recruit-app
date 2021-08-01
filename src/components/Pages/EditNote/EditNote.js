@@ -51,11 +51,14 @@ class EditNote extends Component {
     }
 
     render() {
-        const { title, content } = this.state;
+        const { title, content, error } = this.state;
 
         return (
             <>
                 <h1 className="noteTitle">Edit '' Note</h1>
+                <div className="error" role='alert'>
+                    {error && <p>{error.message}</p>}
+                </div>
                 <form id="editNoteForm" onSubmit={ this.handleSubmit }>
                     <h4 className="formTitle">Enter A New Note</h4>
                     <input 

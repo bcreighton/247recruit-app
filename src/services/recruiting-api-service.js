@@ -146,37 +146,37 @@ const RecruitingApiService = {
         
         return fetch(`${config.API_ENDPOINT}/note`, {
             method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                'Authorization': `Bearer ${config.API_KEY}`,
-            },
             body: JSON.stringify({
                 title: newNote.title,
                 content: newNote.content,
                 username_id: newNote.username_id,
                 agent_id: newNote.agent_id,
             }),
-        })
-            .then(res =>
-                (!res.ok) 
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
-    },
-    addFollowedAgent(userId, agent_id) {
-        return fetch(`${config.API_ENDPOINT}/followed-agent/${userId}`, {
-            method: 'POST',
             headers: {
                 'content-type': 'application/json',
                 'Authorization': `Bearer ${config.API_KEY}`,
             },
+        })
+            .then(res => {
+                
+                return (!res.ok) 
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            })
+    },
+    addFollowedAgent(userId, agent_id) {
+        return fetch(`${config.API_ENDPOINT}/followed-agent/${userId}`, {
+            method: 'POST',
             body: JSON.stringify({
                 agent_id,
                 username_id: userId,
             }),
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_KEY}`,
+            },
         })
             .then(res =>{
-                
                 return (!res.ok) 
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()

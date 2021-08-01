@@ -78,7 +78,7 @@ class SearchForm extends Component {
           />
           <label 
             htmlFor="office">
-            Office
+            Brokerage
           </label>
 
           {/* <input 

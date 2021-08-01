@@ -56,7 +56,9 @@ class App extends Component {
   agentSearch = (search) => {
     RecruitingApiService.getAgents(search, this.state.searchSortOption)
       .then(this.setAgents)
-      .catch(error => this.setState({ error }))
+      .catch(error => {
+        
+        return this.setState({ error })})
   }
 
   resetActiveAgent = () => {
@@ -155,7 +157,8 @@ class App extends Component {
     RecruitingApiService.addNote(newNote)
       .then((note) => { 
         this.setState({
-          agentNotes: [note, ...this.state.agentNotes]
+          agentNotes: [note, ...this.state.agentNotes],
+          error: null,
         })
       })
       .catch(error=> this.setState({ error }))
@@ -237,7 +240,8 @@ class App extends Component {
       agentNotes: this.state.agentNotes,
       activeNote: this.state.activeNote,
       updateNote: this.updateNote,
-      deleteNote: this.deleteNote
+      deleteNote: this.deleteNote,
+      error: this.state.error,
     }
 
     return (

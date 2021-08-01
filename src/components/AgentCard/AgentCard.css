@@ -9,8 +9,15 @@
     grid-template-rows: 3fr 1fr;
     margin: 20px;
     padding: 10px;
-    border-bottom: 2px solid #5580e9;
+    background-color: #fff;
     border-radius: 10px;
+    box-shadow: 0 5px 0 #5ab8eb;
+    transition: all .1s linear;
+}
+
+.agentCard:active {
+    box-shadow: 0 2px 0 #5ab8eb;
+    transform: translateY(3px);
 }
 
 .agentCard:last-of-type {
