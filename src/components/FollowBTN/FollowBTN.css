@@ -1,9 +1,23 @@
 .followed {
-  background: #6e0000;
+  background: #920000;
   text-transform: uppercase;
+  box-shadow: 0 5px 0 #6a0000;
+  transition: all .1s linear;
+}
+
+.followed:active {
+  box-shadow: 0 2px 0 #6a0000;
+  transform: translateY(3px);
 }
 
 .notfollowed {
   background: #84CEEB;
   text-transform: uppercase;
+  box-shadow: 0 5px 0 #5ab8eb;
+  transition: all .1s linear;
+}
+
+.notfollowed:active {
+  box-shadow: 0 2px 0 #5ab8eb;
+  transform: translateY(3px);
 }

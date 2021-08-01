@@ -197,6 +197,8 @@ button[type=submit], button[type=reset] {
 }
 
 button[type=submit], button[type=reset], .getStarted {
+    width: 100%;
+    margin: 10px auto;
     padding: 5px 20px;
     text-align: center;
     text-transform: uppercase;

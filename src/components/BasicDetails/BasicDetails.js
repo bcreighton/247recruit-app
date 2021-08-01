@@ -10,7 +10,7 @@ class BasicDetails extends Component {
           <li className="detailItem agentCardName">
             {this.props.agent.name}
           </li>
-          <li className="detailItem agentOffice2">
+          <li className="detailItem agentOffice">
             {this.props.agent.office_name}
           </li>
           <li className="detailItem">

@@ -1,8 +1,3 @@
-/* .searchResults {
-    border: 3px solid #5580e9;
-    border-radius: 10px;
-} */
-
 .agentCard {
     display: grid;
     grid-template-columns: 1fr;
@@ -27,7 +22,7 @@
 .basicDetails ul{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr .5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .detailItem.agentCardName {
@@ -45,7 +40,7 @@
     margin-top: 0;
 }
 
-.detailItem, .follow {
+.detailItem {
     margin: 5px 0;
     align-self: center;
 }
@@ -57,7 +52,7 @@
 }
 
 .follow {
-    width: 80%;
+    width: 90%;
     margin: 7px auto;
     padding: 5px;
     text-align: center;
