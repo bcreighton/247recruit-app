@@ -4,6 +4,8 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 3fr;
     border-bottom: 2px solid lightgray;
+    color: #fff;
+
 }
 
 .container.followUp {
@@ -23,10 +25,14 @@
     grid-row: 3;
 }
 
+.agentDetail .detailTitle {
+    color: #84CEEB;
+}
+
 .agentDetail .details ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr .5fr 2fr;
 }
 
 .detailItem.phone, .detailItem.email {
@@ -50,31 +56,31 @@
     align-self: start;
 }
 
-.detailItem.vol {
-    grid-column: 1/2;
-    grid-row: 3/4;
-}
-
-.detailItem.trans {
-    grid-column: 2/3;
-    grid-row: 3/4;
-}
-
-.detailItem.exp {
-    grid-column: 1/2;
-    grid-row: 4/5;
-}
-
 .detailItem.officeName {
-    grid-column: 1/2;
-    grid-row: 4/5;
+    grid-column: 1/3;
+    grid-row: 3/4;
     font-weight: bold;
 }
 
 .detailItem.officeAddress {
-    grid-column: 2/3;
+    grid-column: 1/3;
     grid-row: 4/5;
 }
+
+.detailItem.vol {
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+
+.detailItem.trans {
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+
+/* .detailItem.exp {
+    grid-column: 1/2;
+    grid-row: 4/5;
+} */
 
 .office .officeName {
     font-weight: bold;
@@ -82,4 +88,5 @@
 
 .followUpList {
     list-style-type:square;
+    color: #fff;
 }

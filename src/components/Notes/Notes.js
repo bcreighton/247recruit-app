@@ -75,7 +75,9 @@ class Notes extends Component {
           <NoteForm 
             handleNoteSubmit = {this.handleNoteSubmit}
           />
-          <p className='notification'>You have no notes for this agent.</p>
+          <div className="container">
+            <p className='notification'>You have no notes for this agent.</p>
+          </div>
         </>
       )
   }

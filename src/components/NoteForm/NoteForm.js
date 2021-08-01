@@ -24,7 +24,12 @@ class NoteForm extends Component {
           <input type="text" id='title' name='title' />
           <label htmlFor="title">Title</label>
 
-          <input type="content" id='content' name='content' />
+          <textarea 
+            rows='5'
+            cols='100'
+            id='content'
+            name='content' 
+          />
           <label htmlFor="content">Content</label>
           <div className="btnContainer">
             <button type='submit'>Save</button>

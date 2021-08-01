@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import RecruitContext from '../../../context/RecruitContext'
 import AgentCard from '../../AgentCard/AgentCard'
+import './FollowedAgents.css'
 
 
 class FollowedAgents extends Component {

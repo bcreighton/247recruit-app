@@ -69,6 +69,7 @@ h3 {
 
 h4 {
     font-size: 1.1rem;
+    color: #84CEEB;
 }
 
 h5 {
@@ -129,6 +130,10 @@ form {
     padding: 10px;
 }
 
+.formTitle {
+    margin-bottom: 10px;
+}
+
 fieldset {
     margin: 30px 0;
     border: none;
@@ -151,11 +156,21 @@ label {
     color: #84CEEB;
 }
 
-input, textarea{
+input[type=text], textarea{
     width: 100%;
-    padding: 10px 5px;
+    padding: 10px;
     border: none;
-    border-bottom: 2px solid #C1C8E4;
+    font-size: 1.15rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type=text]:focus, textarea:focus {
+    outline: none;
+    border: 3px solid #C1C8E4;
 }
 
 ol {
@@ -196,7 +211,7 @@ button[type=submit], button[type=reset] {
     margin: 20px;
 }
 
-button[type=submit], button[type=reset], .getStarted {
+button[type=submit], button[type=reset], .getStarted, .cancel {
     width: 100%;
     margin: 10px auto;
     padding: 5px 20px;
@@ -229,7 +244,7 @@ button[type=reset]:active, .delete:active, .cancel:active {
     text-align: right;
 }
 
-.edit, .delete, .cancel{
+.edit, .delete {
     margin: 5px 10px;
     padding: 5px 10px;
     text-transform: uppercase;
@@ -259,7 +274,7 @@ footer {
 }
 
 .notification a {
-    color: #5580E9;
+    color: #5AB8EB;
 }
 
 .error p:before {

@@ -5,8 +5,14 @@
   gap: 10px;
   margin-bottom: 20px;
   padding: 20px;
-  border: 3px solid lightgray;
+  background-color: #fff;
+  border: 3px solid #5AB8EB;
   border-radius: 10px;
+  color: rgb(67, 67, 67);
+}
+
+.noteCard .noteTitle, .noteCard .noteDate {
+  color: #8A66D9;
 }
 
 .noteDate {
