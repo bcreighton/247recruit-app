@@ -17,7 +17,7 @@ class NoteForm extends Component {
     return (
       <section className='container'>
         <div className="error" role='alert'>
-          {error && <p>{ error.error.message }</p>}
+          {error && <p>{ error.message }</p>}
         </div>
         <form id="note" onSubmit={e => this.props.handleNoteSubmit(e)}>
           <h4 className="formTitle">Enter A New Note</h4>
