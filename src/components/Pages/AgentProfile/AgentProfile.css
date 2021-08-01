@@ -2,7 +2,7 @@
     display: grid;
     padding: 10px 20px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-rows: 1fr .5fr 3fr;
     border-bottom: 2px solid lightgray;
     color: #fff;
 
@@ -15,6 +15,7 @@
 .agentName {
     grid-row: 1/2;
     align-self: end;
+    justify-self: center;
 }
 
 .follow {
@@ -26,6 +27,8 @@
 }
 
 .agentDetail .detailTitle {
+    margin: 10px 0px;
+    font-size: 1.25rem;
     color: #84CEEB;
 }
 
@@ -37,7 +40,7 @@
 
 .detailItem.phone, .detailItem.email {
     justify-self: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
@@ -51,14 +54,16 @@
     grid-row: 2/3;
 }
 
-.vol, .trans, .exp, .office {
+.vol, .trans, .exp {
     justify-self: start;
     align-self: start;
+    font-size: 1.1rem;
 }
 
 .detailItem.officeName {
     grid-column: 1/3;
     grid-row: 3/4;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
@@ -82,11 +87,127 @@
     grid-row: 4/5;
 } */
 
-.office .officeName {
+.officeName {
     font-weight: bold;
 }
 
 .followUpList {
     list-style-type:square;
     color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+/* Responsive Mobile Styling */
+
+@media screen and (min-width: 480px) {
+  
+}
+
+@media screen and (min-width: 675px) {
+  
+}
+
+@media screen and (min-width: 750px) {
+
+}
+
+@media screen and (min-width: 1015px) {
+    .follow {
+        width: 60%;
+        margin: 5px auto;
+        padding: 0px;
+        font-size: 1.25rem;
+    }
+
+    .agentDetail .details, .container.followUp {
+        padding: 5px 40px;
+    }
+}
+
+@media screen and (min-width: 1225px) {
+    #agentProfile {
+        display: grid;
+        grid-template-columns: 1.75fr 3fr;
+        grid-template-rows: .25fr 2fr;
+        padding: 0 30px;
+    }
+
+    #agentProfile .container.agentDetail {
+        grid-row: 1/2;
+        grid-column: 1/3;
+    }
+
+    #agentProfile .container.agentDetail .follow {
+        padding: 10px;
+    }
+
+    #agentProfile .agentDetail .details ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    #agentProfile .detailItem.phone, #agentProfile .detailItem.email {
+        grid-column: 1/4;
+    }
+
+    .detailItem.officeName, .detailItem.officeAddress {
+        display: none;
+    }
+
+    #agentProfile .mobileOnly {
+        display: block;
+    }
+
+    #agentProfile .detailItem.office, #agentProfile .detailItem.vol, #agentProfile .detailItem.trans {
+        justify-self: center;
+    }
+
+    #agentProfile .detailItem.office {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        align-self: end;
+    }
+
+    #agentProfile .detailItem.office .officeName {
+        font-size: 1.15rem;
+    }
+
+    #agentProfile .detailItem.office .officeAddress {
+        margin-top: 10px;
+    }
+
+    #agentProfile .detailItem.vol {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    #agentProfile .detailItem.trans {
+        grid-column: 3/4;
+        grid-row: 3/4;
+    }
+
+    .container.followUp, .container.notes {
+        padding: 10px;
+    }
+
+    .container.followUp {
+        margin-left:100px;
+    }
+
+    .container.notes {
+        margin-right:100px;
+    }
+}
+
+@media screen and (min-width: 1360px) {
+    .container.followUp {
+        margin-left:125px;
+    }
+
+    .container.notes {
+        margin-right:125px;
+    }
 }

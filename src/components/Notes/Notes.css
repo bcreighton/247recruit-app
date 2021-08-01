@@ -1,0 +1,36 @@
+.noteList {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Responsive Mobile Styling */
+
+@media screen and (min-width: 480px) {
+
+}
+
+@media screen and (min-width: 675px) {
+    .container.notes {
+        width: 85%;
+    }
+
+    .container.notes .container, .container.notes .noteList {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 750px) {
+
+}
+
+@media screen and (min-width: 1015px) {
+
+}
+
+@media screen and (min-width: 1225px) {
+
+}
+
+@media screen and (min-width: 1360px) {
+
+}

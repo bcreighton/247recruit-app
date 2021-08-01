@@ -53,13 +53,13 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     font-weight: bolder;
     color: #FFF;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
 
 h3 {
@@ -123,7 +123,7 @@ main {
 }
 
 .sectionHead {
-    color: #84CEEB;
+    color: #fff;
 }
 
 form {
@@ -131,6 +131,7 @@ form {
 }
 
 .formTitle {
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
@@ -152,6 +153,7 @@ legend {
 label {
     display: inline-block;
     padding: 5px 0px 10px 0;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #84CEEB;
 }
@@ -240,10 +242,6 @@ button[type=reset]:active, .delete:active, .cancel:active {
     box-shadow: 0 2px 0 #6a0000;
 }
 
-.noteBTNs {
-    text-align: right;
-}
-
 .edit, .delete {
     margin: 5px 10px;
     padding: 5px 10px;
@@ -283,4 +281,44 @@ footer {
 .error {
     color: #920000;
     font-weight: bold;
+}
+
+.mobileOnly {
+    display: none;
+}
+
+/* Responsive Mobile Styling */
+
+@media screen and (min-width: 480px) {
+
+}
+
+@media screen and (min-width: 675px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 750px) {
+
+}
+
+@media screen and (min-width: 1015px) {
+    .getStarted {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1225px) {
+
+}
+
+@media screen and (min-width: 1360px) {
+
+}
+
+@media screen and (min-width: 1500px) {
+    main {
+        padding: 0 75px;
+    }
 }

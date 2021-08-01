@@ -13,15 +13,15 @@ class BasicDetails extends Component {
           <li className="detailItem agentOffice">
             {this.props.agent.office_name}
           </li>
-          <li className="detailItem">
+          <li className="detailItem basic vol">
             <span className='detailTitle'>Volume: </span>
             <NumberFormat value={this.props.agent.vol} displayType={'text'} thousandSeparator={true} prefix={'$'} />
           </li>
-          <li className="detailItem">
+          <li className="detailItem basic trans">
             <span className='detailTitle'>Transactions: </span>
             <NumberFormat value={this.props.agent.trans} npm displayType={'text'} thousandSeparator={true} />
           </li>
-          <li className="detailItem">
+          <li className="detailItem basic exp">
             <span className='detailTitle'>Experience: </span>
             {this.props.agent.exp} years
           </li>

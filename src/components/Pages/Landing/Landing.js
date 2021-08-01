@@ -19,11 +19,11 @@ class Landing extends Component {
             </p>
             <h2>How To Use 24/7 REcruit...</h2>
               <ol>
-                <li>Click "Get Started" (no registration or login required)</li>
-                <li>Search for an agent or a wildcard term ie: Veronica, Duane, R, El</li>
-                <li>Click the agent you want more detail on.</li>
-                <li>Create a note using the form</li>
-                <li>Have fun finding all the other functions...</li>
+                <li><span>1. </span>Click "Get Started" (no registration or login required)</li>
+                <li><span>2. </span>Search for an agent or a wildcard term ie: Veronica, Duane, R, El</li>
+                <li><span>3. </span>Select the agent you want see more details about.</li>
+                <li><span>4. </span>Create a note using the form</li>
+                <li><span>5. </span>Explore the rest of the app...</li>
               </ol>
           </div>
         </section>
@@ -37,7 +37,7 @@ class Landing extends Component {
                 <img className='valueImage' src={searchIcon} alt="search-icon"/>
               </div>
               <h2 className="valueTitle">Search!</h2>
-              Looking for the top agents in your market? You're in the right place to grow your brokerage!
+              <p>Looking for the top agents in your market? You're in the right place to grow your brokerage!</p>
             </div>
           </div>
           <div className="valueContainer">
@@ -49,7 +49,7 @@ class Landing extends Component {
               <img className='valueImage' src={dataIcon} alt="data-icon"/>
               </div>
               <h2 className="valueTitle">Data!</h2>
-              We connect the MLS data with your local licensing commssion to give you more precise and up to date data!
+              <p>We connect the MLS data with your local licensing commssion to give you more precise and up to date data!</p>
             </div>
           </div>
           <div className="valueContainer">
@@ -61,12 +61,12 @@ class Landing extends Component {
                 <img className='valueImage' src={followUpIcon} alt="follow-up-icon"/>
               </div>
               <h2 className="valueTitle">Follow Up!</h2>
-              Follow and stay in touch with the agents you feel you can help the most!
+              <p>Follow and stay in touch with the agents you feel you can help the most!</p>
             </div>
           </div>
         </section>
 
-        <section className="container">
+        <section className="container cta">
           <GetStartedBTN />
         </section>
       </>

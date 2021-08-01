@@ -19,11 +19,11 @@ class AgentProfile extends Component {
 
   renderAgent() {
     return (
-      <>
+      <div id='agentProfile'>
         <Details agentId={this.props.match.params.agentId}/>
-        <FollowUp />
-        <Notes id={this.props.match.params.agentId}/>
-      </>
+          <FollowUp />
+          <Notes id={this.props.match.params.agentId}/>
+      </div>
     )
   }
 

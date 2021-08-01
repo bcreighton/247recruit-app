@@ -1,0 +1,45 @@
+/* Responsive Mobile Styling */
+
+@media screen and (min-width: 480px) {
+
+}
+
+@media screen and (min-width: 675px) {
+    .container.searchForm, .container.searchSort {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 750px) {
+
+}
+
+@media screen and (min-width: 1015px) {
+
+}
+
+@media screen and (min-width: 1225px) {
+    #agentSearch {
+        display: grid;
+        grid-template-columns: 1.75fr 3fr;
+        grid-template-rows: 1fr 2fr;
+        padding: 0 30px;
+    }
+
+    #agentSearch .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    #agentSearch .container.searchForm, #agentSearch .container.searchSort {
+        width:98%;
+    }
+
+    #agentSearch .container.searchForm {
+        padding: 10px 0px;
+    }
+}
+
+@media screen and (min-width: 1360px) {
+
+}
