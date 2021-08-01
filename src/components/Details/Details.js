@@ -25,6 +25,10 @@ class Details extends Component {
             <li className='detailItem officeAddress'>
               {`${this.context.activeAgent.brokerage_street}, ${this.context.activeAgent.brokerage_city}, ${this.context.activeAgent.brokerage_state}`}
             </li>
+            <li className="detailItem office mobileOnly">
+              <span className='officeName'>{this.context.activeAgent.brokerage}</span>
+              <p className='officeAddress'>{`${this.context.activeAgent.brokerage_street}, ${this.context.activeAgent.brokerage_city}, ${this.context.activeAgent.brokerage_state}`}</p>
+            </li>
             <li className="detailItem vol">
               <span className='detailTitle'>Volume: </span>
               <NumberFormat value={this.context.activeAgent.vol} displayType={'text'} thousandSeparator={true} prefix={'$'} />

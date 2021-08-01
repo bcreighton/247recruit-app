@@ -3,6 +3,7 @@ import dateFormat from 'dateformat';
 import NoteCard from '../NoteCard/NoteCard'
 import NoteForm from '../NoteForm/NoteForm'
 import RecruitContext from '../../context/RecruitContext'
+import './Notes.css';
 
 class Notes extends Component {
   static contextType = RecruitContext;

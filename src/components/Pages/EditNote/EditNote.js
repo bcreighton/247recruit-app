@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RecruitContext from '../../../context/RecruitContext';
 import RecruitingApiService from '../../../services/recruiting-api-service';
+import './EditNote.css';
 
 class EditNote extends Component {
     static contextType = RecruitContext;

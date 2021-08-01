@@ -1,6 +1,10 @@
-.container.hero {
+.container.hero, .container.cta {
   width: 100%;
   padding: 15px 15%;
+}
+
+.heroTitle, .heroValue {
+  margin-bottom: 30px;
 }
 
 .heroTitle {
@@ -15,7 +19,8 @@
 
 .instructions {
   width: fit-content;
-  margin: 0 auto;
+  margin: 30px auto 10px;
+  padding: 0px 20px;
 }
 
 .disclaimer {
@@ -28,15 +33,18 @@
 }
 
 .instructions h2 {
-  margin: 40px 20px 20px;
+  margin: 40px auto 20px;
   color: #84CEEB;
 }
 
 .instructions ol li {
   margin-bottom: 20px;
+  list-style: none inside;
   font-size: 1.2rem;
   font-weight: 600;
   color: #fff;
+  padding-left: 1rem;
+  text-indent: -1rem;
 }
 
 .container.valuePitch {
@@ -69,10 +77,70 @@
 .valueImage {
   display: block;
   margin: 10px auto 30px;
-  width: 80%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
   border-radius: 50%;
 }
 
 .valueTitle {
   color: #84CEEB;
+}
+
+.valueContent p {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Responsive Mobile Styling */
+
+@media screen and (min-width: 480px) {
+  
+}
+
+@media screen and (min-width: 675px) {
+  
+}
+
+@media screen and (min-width: 750px) {
+  .valueImage {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1015px) {
+  .container.valuePitch {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .valueContainer {
+    border: none;
+  }
+
+  .valueImage {
+    width: 175px;
+    height: 175px;
+  }
+}
+
+@media screen and (min-width: 1225px) {
+  .container.hero{
+    text-align: center;
+  }
+
+  .container.hero ol{
+    text-align: left;
+    padding: 0 100px;
+  }
+
+  .valueImage {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+
 }

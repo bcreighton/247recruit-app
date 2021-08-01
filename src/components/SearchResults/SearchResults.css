@@ -3,3 +3,33 @@
     margin: 0 auto;
     display: grid;
 }
+
+/* Responsive Mobile Styling */
+
+@media screen and (min-width: 480px) {
+    .searchResults {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 675px) {
+    .searchResults {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 750px) {
+
+}
+
+@media screen and (min-width: 1015px) {
+
+}
+
+@media screen and (min-width: 1225px) {
+
+}
+
+@media screen and (min-width: 1360px) {
+
+}

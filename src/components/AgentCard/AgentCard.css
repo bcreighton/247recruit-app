@@ -19,10 +19,15 @@
     border: none;
 }
 
+.agentCard a {
+    margin: 0 auto;
+}
+
 .basicDetails ul{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 25px;
 }
 
 .detailItem.agentCardName {
@@ -56,4 +61,71 @@
     margin: 7px auto;
     padding: 5px;
     text-align: center;
+}
+
+/* Responsive Mobile Styling */
+
+@media screen and (min-width: 480px) {
+  
+}
+
+@media screen and (min-width: 675px) {
+  
+}
+
+@media screen and (min-width: 750px) {
+
+}
+
+@media screen and (min-width: 1015px) {
+    .agentCard a {
+        width: 90%;
+    }
+
+    .basicDetails ul {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .detailItem.agentCardName {
+        grid-column: 1/4;
+    }
+
+    .detailItem.agentOffice {
+        grid-column: 4/6;
+        grid-row: 1/2;
+        align-self: end;
+    }
+
+    .detailItem.basic.vol {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .detailItem.basic.trans {
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+
+    .detailItem.basic.exp {
+        grid-column: 4/5;
+        grid-row: 2/3;
+    }
+
+    .agentCard .follow {
+        margin: 0 auto;
+        padding: 10px 5px;
+    }
+
+}
+
+@media screen and (min-width: 1225px) {
+    .agentCard {
+        max-width: 650px;
+        justify-self: center;
+    }
+}
+
+@media screen and (min-width: 1360px) {
+
 }

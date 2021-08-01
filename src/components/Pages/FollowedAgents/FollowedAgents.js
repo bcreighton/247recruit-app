@@ -34,7 +34,7 @@ class FollowedAgents extends Component {
         const followedAgents = this.generateFollowedAgentsList(this.context.followedAgents)
 
         return (
-            <section className="container">
+            <section id='followedAgents' className="container">
                 <h1 className="sectionTitle">Agents You're Following</h1>
                 {followedAgents.length > 0 ? followedAgents : <p className='notification'>You are not following any agents; please visit <Link to='/search'>"Find Agents"</Link> to search for agents to follow. </p>}
             </section>
