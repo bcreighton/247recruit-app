@@ -56,9 +56,10 @@ class App extends Component {
   agentSearch = (search) => {
     RecruitingApiService.getAgents(search, this.state.searchSortOption)
       .then(this.setAgents)
-      .catch(error => {
-        
-        return this.setState({ error })})
+      .catch(error => this.setState({ 
+        agents: [],
+        error 
+      }))
   }
 
   resetActiveAgent = () => {
