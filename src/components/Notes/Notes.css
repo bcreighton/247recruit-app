@@ -28,9 +28,26 @@
 }
 
 @media screen and (min-width: 1225px) {
+    .container.notes {
+        margin-right:100px;
+    }
 
+    .container.followUp, .container.notes {
+        padding: 10px;
+    }
+
+    .container.notification {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    .notMobile {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 1360px) {
-
+    .container.notes {
+        margin-right:125px;
+    }
 }

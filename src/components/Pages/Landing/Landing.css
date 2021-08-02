@@ -126,6 +126,11 @@
 }
 
 @media screen and (min-width: 1225px) {
+  #landing {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
   .container.hero{
     text-align: center;
   }

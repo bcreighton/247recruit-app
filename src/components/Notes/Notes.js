@@ -72,12 +72,12 @@ class Notes extends Component {
     return this.context.agentNotes.length ? this.renderNotes()
     : ( 
         <>
-          <hr />
+          <hr className='notMobile'/>
           <NoteForm 
             handleNoteSubmit = {this.handleNoteSubmit}
           />
-          <div className="container">
-            <p className='notification'>You have no notes for this agent.</p>
+          <div className="container notification">
+            <p>You have no notes for this agent.</p>
           </div>
         </>
       )

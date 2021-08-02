@@ -20,9 +20,11 @@
 
 @media screen and (min-width: 1225px) {
     #agentSearch {
+        max-width: 1200px;
+        margin: 0 auto;
         display: grid;
         grid-template-columns: 1.75fr 3fr;
-        grid-template-rows: 1fr 2fr;
+        grid-template-rows: 1fr;
         padding: 0 30px;
     }
 

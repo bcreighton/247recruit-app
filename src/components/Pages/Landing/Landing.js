@@ -8,7 +8,7 @@ import followUpIcon from '../../../images/follow-up-icon.jpg'
 class Landing extends Component {
   render() {
     return (
-      <>
+      <div id='landing'>
         <section className="container hero">
           <h2 className='heroTitle'>Grow Your Brokerage Today!!</h2>
           <h3 className='heroValue'>Find, follow and stay in touch with the agents in your marketplace that you value the most and can provide the most value to!</h3>
@@ -69,7 +69,7 @@ class Landing extends Component {
         <section className="container cta">
           <GetStartedBTN />
         </section>
-      </>
+      </div>
     )
   }
 }

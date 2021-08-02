@@ -55,7 +55,7 @@ class EditNote extends Component {
         const { title, content, error } = this.state;
 
         return (
-            <div className='container'>
+            <div id='editNote' className='container'>
                 <h1 className="noteTitle">Edit '{title}' Note</h1>
                 <div className="error" role='alert'>
                     {error && <p>{error.message}</p>}

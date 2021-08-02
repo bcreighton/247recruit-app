@@ -130,7 +130,9 @@
     #agentProfile {
         display: grid;
         grid-template-columns: 1.75fr 3fr;
-        grid-template-rows: .25fr 2fr;
+        grid-template-rows: .25fr auto auto;
+        max-width: 1300px;
+        margin: 0 auto;
         padding: 0 30px;
     }
 
@@ -188,26 +190,8 @@
         grid-column: 3/4;
         grid-row: 3/4;
     }
-
-    .container.followUp, .container.notes {
-        padding: 10px;
-    }
-
-    .container.followUp {
-        margin-left:100px;
-    }
-
-    .container.notes {
-        margin-right:100px;
-    }
 }
 
 @media screen and (min-width: 1360px) {
-    .container.followUp {
-        margin-left:125px;
-    }
 
-    .container.notes {
-        margin-right:125px;
-    }
 }
