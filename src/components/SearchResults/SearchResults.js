@@ -20,7 +20,6 @@ class SearchResults extends Component {
         ))
     }
     render() {
-        const agents = this.generateAgentList(this.context.agents);
         const { error } = this.context;
 
         return (
