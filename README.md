@@ -21,7 +21,7 @@ Recruiting the Real Estate Brokerage business is a physical sport; has has only 
 
 ## Quick App Demo
 
-![Imgur](https://i.imgur.com/uQNu553.mp4)
+![Imgur](https://i.imgur.com/EhU7SGx.mp4)
 
 ## Technology
 
