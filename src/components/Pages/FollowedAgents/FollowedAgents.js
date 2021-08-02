@@ -27,6 +27,7 @@ class FollowedAgents extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.context.getFollowedAgents(this.context.user.id)
     }
 

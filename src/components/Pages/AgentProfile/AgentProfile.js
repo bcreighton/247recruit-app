@@ -14,7 +14,8 @@ class AgentProfile extends Component {
   }
 
   componentDidMount() {
-    this.context.getAgent(parseInt(this.props.match.params.agentId))
+    window.scrollTo(0, 0);
+    this.context.getAgent(parseInt(this.props.match.params.agentId));
   }
 
   renderAgent() {

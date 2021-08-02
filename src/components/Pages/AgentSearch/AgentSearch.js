@@ -5,6 +5,10 @@ import SearchSort from '../../SearchSort/SearchSort'
 import './AgentSearch.css';
 
 class AgentSearch extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+    
     render() {
         return (
             <div id='agentSearch'>

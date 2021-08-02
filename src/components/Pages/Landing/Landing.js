@@ -6,6 +6,10 @@ import dataIcon from '../../../images/data-icon.jpg';
 import followUpIcon from '../../../images/follow-up-icon.jpg'
 
 class Landing extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+  
   render() {
     return (
       <div id='landing'>

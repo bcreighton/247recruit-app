@@ -39,6 +39,7 @@ class EditNote extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         RecruitingApiService.getNote(this.props.match.params.noteId)
             .then(note => {
                 return this.setState({
