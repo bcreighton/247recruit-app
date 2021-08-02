@@ -12,12 +12,11 @@ class NoteForm extends Component {
   render() {
 
     const { error } = this.context;
-    
 
     return (
       <section className='container'>
         <div className="error" role='alert'>
-          {error && <p>{ error.message }</p>}
+          {error && <p>{ error.error.message }</p>}
         </div>
         <form id="note" onSubmit={e => this.props.handleNoteSubmit(e)}>
           <h4 className="formTitle">Enter A New Note</h4>

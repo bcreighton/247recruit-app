@@ -59,7 +59,7 @@ class EditNote extends Component {
             <div id='editNote' className='container'>
                 <h1 className="noteTitle">Edit '{title}' Note</h1>
                 <div className="error" role='alert'>
-                    {error && <p>{error.message}</p>}
+                    {error && <p>{error.error.message}</p>}
                 </div>
                 <form id="editNoteForm" onSubmit={ this.handleSubmit }>
                     <input 

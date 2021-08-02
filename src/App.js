@@ -9,10 +9,11 @@ import AgentSearch from './components/Pages/AgentSearch/AgentSearch';
 import Landing from './components/Pages/Landing/Landing'
 import Login from './components/Pages/Login/Login'
 import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
-import './reset.css'
-import './App.css'
 import RecruitContext from './context/RecruitContext';
 import RecruitingApiService from './services/recruiting-api-service';
+import {Helmet} from "react-helmet";
+import './reset.css'
+import './App.css'
 
 class App extends Component {
   state = {
@@ -247,6 +248,11 @@ class App extends Component {
 
     return (
       <div className='App'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>24/7 REcruit</title>
+            <meta name='description' content='Real Estate Brokerage recruiting application pilot.'/>
+        </Helmet>
         <RecruitContext.Provider value={ contextValue }>
           <Nav />
           <main>

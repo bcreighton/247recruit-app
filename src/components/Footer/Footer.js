@@ -5,7 +5,7 @@ class Footer extends Component {
         return (
             <footer className='container'>
                 <div>
-                    <p>Copyright © 2020 24/7 REcruit. All rights reserved</p>
+                    <p>Copyright © 2021 24/7 REcruit. All rights reserved</p>
                 </div>
             </footer>
         )
