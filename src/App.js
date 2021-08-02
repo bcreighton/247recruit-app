@@ -265,7 +265,6 @@ class App extends Component {
                 component={EditNote}
               />
               <Route path='/agents' component={FollowedAgents} />
-              <Route path='/signin' component={Login} />
               <Route path='/search' component={AgentSearch} />
               <Route path='/' exact component={Landing} />
               <Route component={PageNotFound} />
