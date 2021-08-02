@@ -37,10 +37,6 @@ class Details extends Component {
               <span className='detailTitle'>Transactions: </span>
               <NumberFormat value={this.context.activeAgent.trans} displayType={'text'} thousandSeparator={true} />
             </li>
-            {/* <li className="detailItem exp">
-              <span className='detailTitle'>Experience: </span>
-              {this.context.activeAgent.exp} years
-            </li> */}
           </ul>
         </div>
       </section>
