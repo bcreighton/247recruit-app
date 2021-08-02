@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import FollowedAgents from './components/Pages/FollowedAgents/FollowedAgents'
-import Footer from './components/Footer/Footer';
 import Nav from './components/Nav/Nav';
+import FollowedAgents from './components/Pages/FollowedAgents/FollowedAgents'
 import AgentProfile from './components/Pages/AgentProfile/AgentProfile';
 import EditNote from './components/Pages/EditNote/EditNote';
 import AgentSearch from './components/Pages/AgentSearch/AgentSearch';
 import Landing from './components/Pages/Landing/Landing'
-import Login from './components/Pages/Login/Login'
 import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
+import Footer from './components/Footer/Footer';
 import RecruitContext from './context/RecruitContext';
 import RecruitingApiService from './services/recruiting-api-service';
 import {Helmet} from "react-helmet";

@@ -21,7 +21,6 @@ class FollowedAgents extends Component {
                 office_name={agent.brokerage}
                 vol={agent.vol}
                 trans={agent.trans}
-                //exp={agent.exp}
             />
         ))
     }
